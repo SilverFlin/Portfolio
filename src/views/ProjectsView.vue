@@ -2,7 +2,8 @@
     <div
         class="container flex flex-wrap justify-around max-w-screen-lg p-5 mx-auto mt-12 mb-12 bg-red-600 min-h-min max-h-max">
         <transition-group name="card">
-            <div class="w-56 p-0 mx-6 my-5 bg-indigo-600 h-80" v-for="(card, idx) in cards" :key="idx">
+            <div class="w-60 p-0 mx-6 my-5 bg-indigo-600 rounded-lg hover:scale-110 h-[25rem] hover:rotate-2 hover:cursor-pointer"
+                v-for="(card, idx) in cards" :key="idx">
                 <project-card :card="card"></project-card>
             </div>
         </transition-group>
@@ -33,7 +34,7 @@ displayCards();
 .card-move,
 .card-enter-active,
 .card-leave-active {
-    transition: all 0.8s ease;
+    transition: opacity 0.8s ease;
 }
 
 .card-enter-from,
