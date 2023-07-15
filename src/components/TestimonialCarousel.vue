@@ -1,31 +1,48 @@
 <template>
-    <div
+    <div @scroll="logPosition"
         class="flex w-full px-6 m-0 overflow-scroll scroll-px-6 remove-scrollbar h-72 snap-x snap-mandatory max-h-64 min-h-min bg-cyan-600">
-        <!-- Card -->
-        <div class="w-1/2 h-full mx-[25%] bg-red-300 shrink-0 snap-center">
-            Hi
-        </div>
-        <div class="w-1/2 h-full mx-[25%] bg-red-300 shrink-0 snap-center">
-            Hi
-        </div>
-        <div class="w-1/2 h-full mx-[25%] bg-red-300 shrink-0 snap-center">
-            Hi
-        </div>
-        <div class="w-1/2 h-full mx-[25%] bg-red-300 shrink-0 snap-center">
-            Hi
-        </div>
-        <div class="w-1/2 h-full mx-[25%] bg-red-300 shrink-0 snap-center">
-            Hi
-        </div>
-        <div class="w-1/2 h-full mx-[25%] bg-red-300 shrink-0 snap-center">
-            Hi
-        </div>
-        <div class="w-1/2 h-full mx-[25%] bg-red-300 shrink-0 snap-center">
-            Hi
+        <testimonial-card v-for="card in testimonialCards" :key="card.id" :card="card"></testimonial-card>
+    </div>
+    <div class="flex justify-center w-1/3 h-auto mx-auto bg-cyan-300">
+        <div v-for="card in testimonialCards" :key="card.id" class="inline mx-2">
+            <template v-if="card.isActive">
+                x
+            </template>
+            <template v-else>
+                o
+            </template>
         </div>
     </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+import TestimonialCard from "@/components/TestimonialCard.vue";
+
+const testimonialCards = ref([
+    { id: 1, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: true },
+    { id: 2, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
+    { id: 3, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
+    { id: 4, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
+    { id: 5, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
+    { id: 6, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
+])
+
+function logPosition(evt: Event) {
+    console.log("scrolling")
+    for (let card of testimonialCards.value) {
+        card.isActive = false
+    }
+
+    const target = evt.target as Element
+    const carouselProgress = Math.round(target.scrollLeft / target.scrollWidth * 100)
+
+    const percentageOfCard = 100 / testimonialCards.value.length
+
+    const cardIndex = Math.round(carouselProgress / percentageOfCard)
+    testimonialCards.value[cardIndex].isActive = true
+}
+</script>
+
 <style>
 .remove-scrollbar::-webkit-scrollbar {
     display: none;
@@ -34,4 +51,5 @@
 .remove-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
-}</style>
+}
+</style>
