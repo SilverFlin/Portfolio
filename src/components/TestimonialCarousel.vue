@@ -1,9 +1,9 @@
 <template>
     <div @scroll="logPosition"
-        class="flex w-full px-6 m-0 overflow-scroll scroll-px-6 remove-scrollbar h-72 snap-x snap-mandatory max-h-64 min-h-min bg-cyan-600">
+        class="flex w-full px-6 m-0 overflow-scroll scroll-px-6 remove-scrollbar h-72 snap-x snap-mandatory max-h-64 min-h-min bg-inherit">
         <testimonial-card v-for="card in testimonialCards" :key="card.id" :card="card"></testimonial-card>
     </div>
-    <div class="flex justify-center w-1/3 h-auto mx-auto bg-cyan-300">
+    <div class="flex justify-center w-1/3 h-auto mx-auto bg-inherit">
         <div v-for="card in testimonialCards" :key="card.id" class="inline mx-2">
             <template v-if="card.isActive">
                 x
@@ -19,7 +19,7 @@ import { ref } from "vue";
 import TestimonialCard from "@/components/TestimonialCard.vue";
 
 const testimonialCards = ref([
-    { id: 1, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: true },
+    { id: 1, name: "John Doe", title: "CEO", company: "Company", message: "LoLorem ipsum dolor sit amet consectrem ipsum dolor sit amet consect", isActive: true },
     { id: 2, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
     { id: 3, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
     { id: 4, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
@@ -28,7 +28,6 @@ const testimonialCards = ref([
 ])
 
 function logPosition(evt: Event) {
-    console.log("scrolling")
     for (let card of testimonialCards.value) {
         card.isActive = false
     }
