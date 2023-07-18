@@ -19,7 +19,7 @@ const cards: Ref<string[]> = ref([])
 
 function displayCards(): void {
     // add 5 cards with a delay of 1s each
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 10; i++) {
         setTimeout(() => {
             cards.value.push(`Card ${i + 1}`);
         }, i * 800);

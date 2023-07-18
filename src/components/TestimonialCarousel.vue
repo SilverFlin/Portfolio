@@ -6,10 +6,10 @@
     <div class="flex justify-center w-1/3 h-auto mx-auto bg-inherit">
         <div v-for="card in testimonialCards" :key="card.id" class="inline mx-2">
             <template v-if="card.isActive">
-                x
+                <Icon :width="30" class="text-[#504A40]" icon="ph:dot-duotone" />
             </template>
             <template v-else>
-                o
+                <Icon :width="30" class="text-[#504A40]" icon="ph:dot" />
             </template>
         </div>
     </div>
@@ -17,14 +17,11 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import TestimonialCard from "@/components/TestimonialCard.vue";
+import { Icon } from "@iconify/vue"
 
 const testimonialCards = ref([
-    { id: 1, name: "John Doe", title: "CEO", company: "Company", message: "LoLorem ipsum dolor sit amet consectrem ipsum dolor sit amet consect", isActive: true },
-    { id: 2, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
-    { id: 3, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
-    { id: 4, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
-    { id: 5, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
-    { id: 6, name: "John Doe", title: "CEO", company: "Company", message: "Lorem ipsum dolor sit amet consect", isActive: false },
+    { id: 1, name: "Omar Palau", title: "Technical Writer", company: "Wizeline", message: "I know Luis since his bachelor's and early professional career. He's critical, self-driven, and motivated. He excels in full-stack engineering and quickly adapts to new technologies. I look forward to working with him in future projects.", imgName: "omar-palau.jpeg", isActive: true },
+    { id: 2, name: "Zachary Plotkin", title: "Founder / CEO", company: "River Project", message: "Lorem ipsum dolor sit amet consect", imgName: "zachary-plotkin.png", isActive: false },
 ])
 
 function logPosition(evt: Event) {
