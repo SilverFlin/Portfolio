@@ -19,9 +19,6 @@ import projectCardsData from "@/models/ProjectCards"
 
 const cards: Ref<ProjectCardProps[]> = ref([])
 
-console.log(projectCardsData[0].date)
-
-
 projectCardsData.forEach((card, idx) => {
     setTimeout(() => {
         cards.value.push(card)

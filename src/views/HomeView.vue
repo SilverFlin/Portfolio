@@ -11,5 +11,6 @@
 import TestimonialCarousel from "@/components/TestimonialCarousel.vue";
 import LastProjectsSection from "@/components/LastProjectsSection.vue";
 import IntroductionSection from "@/components/IntroductionSection.vue";
+
 </script>
  
