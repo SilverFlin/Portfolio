@@ -40,7 +40,7 @@ const projectCards: ProjectCardProps[] = [
         id: 1,
         name: "Portfolio Website",
         description: "This website was built using Vue.js, TypeScript, and Tailwind CSS.",
-        date: new Date("2023-07-02"),
+        date: new Date("2023-07-0"),
         imageName: "portfolio-website.jpeg",
         technologies: [TypeScriptTechnologyLabel, VueTechnologyLabel, TailwindTechnologyLabel, HTMLTechnologyLabel, CSSTechnologyLabel, CSSTechnologyLabel]
     },
@@ -48,11 +48,10 @@ const projectCards: ProjectCardProps[] = [
         id: 2,
         name: "Strix",
         description: "Strix is a web application built with Java, HTML, CSS, JavaScript, and Love.",
-        date: new Date("2023-06-02"),
+        date: new Date("2023-06-01"),
         imageName: "strix.jpg",
         technologies: [JavaTechnologyLabel, JavaScriptTechnologyLabel, HTMLTechnologyLabel, CSSTechnologyLabel]
     }
-
 ]
 
 export default projectCards;
