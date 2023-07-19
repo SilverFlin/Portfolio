@@ -14,10 +14,6 @@
 import router from "@/router";
 
 const routes = router.getRoutes();
-
-console.log(routes)
-
-
 </script>
 
 <style>

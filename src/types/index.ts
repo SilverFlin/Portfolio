@@ -17,13 +17,25 @@ type ProjectCardProps = {
     technologies: TechnologyLabel[];
 }
 
+type ArticleCardProps = {
+    id: number;
+    title: string;
+    description: string;
+    date: Date;
+    imageName: string;
+    tags: TechnologyLabel[];
+}
+
 type TechnologyLabel = {
     name: string;
     color: string;
 }
 
+
+
 export type {
     TestimonialCardProps,
     ProjectCardProps,
-    TechnologyLabel
+    TechnologyLabel,
+    ArticleCardProps
 }
