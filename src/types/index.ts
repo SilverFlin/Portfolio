@@ -8,6 +8,22 @@ type TestimonialCardProps = {
     isActive: boolean;
 }
 
+type ProjectCardProps = {
+    id: number;
+    name: string;
+    description: string;
+    date: Date;
+    imageName: string;
+    technologies: TechnologyLabel[];
+}
+
+type TechnologyLabel = {
+    name: string;
+    color: string;
+}
+
 export type {
-    TestimonialCardProps
+    TestimonialCardProps,
+    ProjectCardProps,
+    TechnologyLabel
 }
