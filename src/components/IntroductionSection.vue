@@ -5,9 +5,12 @@
             <p class="text-5xl text-center">A software engineer</p>
         </div>
         <div class="w-1/2 h-full bg-inherit bg-center bg-contain bg-no-repeat scale-x-[-1]"
-            :style="{ backgroundImage: `url(/src/assets/images/introduction.png)` }">
+            :style="{ backgroundImage: `url(${homeImagesDirPath}/introduction.png)` }">
 
         </div>
 
     </div>
 </template>
+<script setup lang="ts">
+import { homeImagesDirPath } from "@/constants/paths";
+</script>

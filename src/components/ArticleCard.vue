@@ -2,7 +2,7 @@
     <section
         class="hover:drop-shadow-[0_10px_10px_black] w-60 p-0 mx-6 my-5 bg-[#B8B2A7] rounded-lg hover:scale-110 h-[25rem] hover:rotate-2 hover:cursor-pointer shrink-0 grow-0 max-h-[100%] max-w-[100%]">
         <div class="w-full  bg-cover bg-center rounded-t-lg h-1/2"
-            :style="{ backgroundImage: `url(/src/assets/images/${props.card.imageName})` }">
+            :style="{ backgroundImage: `url(${articlesImagesDirPath}/${props.card.imageName})` }">
         </div>
         <div class="p-3">
             <h1 class="relative text-xl font-bold uppercase line-clamp-3 text-[#27241D]">
@@ -30,6 +30,7 @@
 
 <script setup lang="ts">
 import type { ArticleCardProps, TechnologyLabel } from "@/types";
+import { articlesImagesDirPath } from "@/constants/paths";
 
 const props = defineProps<{ card: ArticleCardProps }>()
 
