@@ -1,5 +1,25 @@
 <template>
     <div>
         Hobbies
+        <!-- List of Hobbies -->
+        adsa
+        asdsa.
+        ad.
+        asd
+        a.d
+        asd.
+        asadsa
+        asdsa.
+        ad.
+        asd
+        a.d
+        asd.
+        asadsa
+        asdsa.
+        ad.
+        asd
+        a.d
+        asd.
+        as
     </div>
 </template>

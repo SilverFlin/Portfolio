@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row w-screen h-screen bg-red-300 h-min-screen h-max-screen">
+    <div class="flex flex-row w-screen h-screen max-h-screen min-h-screen overflow-hidden bg-red-300">
         <div class="flex flex-col justify-around w-1/6 h-full py-8 bg-green-300">
             <div @click="clickWhoAmI"
                 :class="{ 'w-5/6': isWhoAmIRendered, 'w-3/6': !isWhoAmIRendered, 'hover:w-4/6': !isWhoAmIRendered }"
@@ -17,10 +17,24 @@
                 Experience
             </div>
         </div>
-        <div class="w-4/6 h-full bg-blue-300">
-            <div>img</div>
-            <component :is="innerViews[currentViewIndex]"></component>
-            <div>contact info</div>
+        <div class="flex flex-col items-center justify-around w-4/6 h-full bg-blue-300">
+            <div style="background-image: url('/src/assets/images/luistoledo.png');"
+                class="w-32 h-32 mt-5 bg-center bg-cover rounded-full shrink-0 grow-0">
+            </div>
+            <component :is="innerViews[currentViewIndex]" class="my-3 shrink-0 min-h-[30%] max-h-[30%]"></component>
+            <div class="flex justify-around w-full">
+                <a target="_blank" href="https://www.linkedin.com/in/luis-angel-toledo-russo-19093822a/"
+                    class="w-10 h-10 p-2 bg-red-200 rounded-full cursor-pointer">
+                    <Icon width=" 25" icon="line-md:linkedin" />
+                </a>
+                <a target="_blank" href="https://github.com/SilverFlin"
+                    class="w-10 h-10 p-2 bg-red-200 rounded-full cursor-pointer">
+                    <Icon width="25" icon="line-md:github-loop" />
+                </a>
+                <a href="mailto:toledorusso@outlook.com" class="w-10 h-10 p-2 bg-red-200 rounded-full cursor-pointer">
+                    <Icon width="25" icon="line-md:email" />
+                </a>
+            </div>
         </div>
         <div class="flex flex-col items-end justify-around w-1/6 h-full py-8 bg-green-300">
             <div @click="clickCertificates"
@@ -48,6 +62,8 @@ import ExperienceComponent from '@/components/AboutMe/ExperienceComponent.vue';
 import CertificatesComponent from '@/components/AboutMe/CertificatesComponent.vue';
 import SkillsComponent from '@/components/AboutMe/SkillsComponent.vue';
 import HobbiesComponent from '@/components/AboutMe/HobbiesComponent.vue';
+
+import { Icon } from '@iconify/vue';
 
 import { ref } from 'vue'
 
