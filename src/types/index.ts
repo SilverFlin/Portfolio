@@ -34,9 +34,10 @@ type TechnologyLabel = {
 type ArticleViewProps = {
     id: number;
     title: string;
+    date: Date;
+    coverImageURL: string;
     description: string;
     content: ArticleContent[];
-    date: Date;
     tags: TechnologyLabel[];
 }
 

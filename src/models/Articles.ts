@@ -5,6 +5,7 @@ const articles: ArticleViewProps[] = [
     {
         id: 1,
         title: 'Article 1',
+        coverImageURL: 'https://picsum.photos/1920/1200',
         description: 'Description 1',
         content: [
             {
