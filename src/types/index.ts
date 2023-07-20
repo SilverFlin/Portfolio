@@ -31,11 +31,48 @@ type TechnologyLabel = {
     color: string;
 }
 
+type ArticleViewProps = {
+    id: number;
+    title: string;
+    description: string;
+    content: ArticleContent[];
+    date: Date;
+    tags: TechnologyLabel[];
+}
+
+interface ArticleContent {
+    type: 'image' | 'text' | 'code';
+}
+
+interface ArticleImageContent extends ArticleContent {
+    type: 'image';
+    url: string;
+    description: string;
+}
+
+interface ArticleTextContent extends ArticleContent {
+    type: 'text';
+    text: string;
+}
+
+interface ArticleCodeContent extends ArticleContent {
+    type: 'code';
+    code: string;
+    language: string;
+}
+
+
+
 
 
 export type {
     TestimonialCardProps,
     ProjectCardProps,
     TechnologyLabel,
-    ArticleCardProps
+    ArticleCardProps,
+    ArticleViewProps,
+    ArticleContent,
+    ArticleImageContent,
+    ArticleTextContent,
+    ArticleCodeContent
 }
