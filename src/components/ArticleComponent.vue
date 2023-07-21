@@ -1,17 +1,14 @@
 <template>
     <div class="h-screen min-h-screen">
-        <div class="flex w-screen bg-fixed bg-red-200 bg-center bg-cover h-2/3"
+        <div class="flex w-screen bg-fixed bg-center bg-cover h-2/3"
             :style="{ backgroundImage: `url(${article!.coverImageURL})` }">
-            <div class="w-1/2 m-auto overflow-hidden bg-gray-800 h-1/2">
-                <h1 class="text-5xl font-bold uppercase">
+            <div class="w-1/2 px-8 py-6 m-auto overflow-hidden bg-[#B8B2A7] h-1/2">
+                <h1 class="text-3xl font-bold uppercase">
                     {{ article!.title }}
                 </h1>
-                <span class="right-0 text-base text-[#E8E6E1] lowercase">
+                <span class="right-0 mt-2 inline-block text-base text-[#504A40] lowercase">
                     {{ article!.date.toLocaleString('default', { day: '2-digit', month: 'short', year: "numeric" }) }}
                 </span>
-                <p class="truncate">
-                    {{ article!.description }}
-                </p>
             </div>
 
         </div>
@@ -26,7 +23,12 @@
                     <img :src="(content as ArticleImageContent).url" alt="" class="w-1/3 mx-auto mt-8">
                 </template>
                 <template v-else-if="content.type === 'code'">
-                    <highlightjs autodetect code="console.log('Hello World');" class="mt-8" />
+                    <highlightjs autodetect :code="(content as ArticleCodeContent).code" class="mt-8" />
+                </template>
+                <template v-else-if="content.type === 'title'">
+                    <h2 class="mt-16 text-3xl font-bold">
+                        {{ (content as ArticleTitleContent).title }}
+                    </h2>
                 </template>
 
             </template>
@@ -43,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ArticleViewProps } from '@/types';
+import type { ArticleTitleContent, ArticleViewProps } from '@/types';
 import { useRoute, useRouter } from 'vue-router';
 import articles from '@/models/Articles';
 import type { ArticleTextContent, ArticleImageContent, ArticleCodeContent } from '@/types';

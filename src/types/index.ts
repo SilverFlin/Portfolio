@@ -42,7 +42,7 @@ type ArticleViewProps = {
 }
 
 interface ArticleContent {
-    type: 'image' | 'text' | 'code';
+    type: 'image' | 'text' | 'code' | 'title';
 }
 
 interface ArticleImageContent extends ArticleContent {
@@ -54,6 +54,11 @@ interface ArticleImageContent extends ArticleContent {
 interface ArticleTextContent extends ArticleContent {
     type: 'text';
     text: string;
+}
+
+interface ArticleTitleContent extends ArticleContent {
+    type: 'title';
+    title: string;
 }
 
 interface ArticleCodeContent extends ArticleContent {
@@ -75,5 +80,6 @@ export type {
     ArticleContent,
     ArticleImageContent,
     ArticleTextContent,
-    ArticleCodeContent
+    ArticleCodeContent,
+    ArticleTitleContent,
 }
