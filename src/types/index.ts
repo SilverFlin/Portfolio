@@ -38,11 +38,11 @@ type ProjectViewProps = {
     date: Date;
     imageName: string;
     technologies: TechnologyLabel[];
-    projectExperience: ArticleContent;
-    projectIntention: ArticleContent;
-    projectChallenges: ArticleContent;
-    projectSolutions: ArticleContent;
-    projectResults: ArticleContent;
+    projectExperience: ArticleTextContent;
+    projectIntention: ArticleTextContent;
+    projectChallenges: ArticleTextContent;
+    projectSolutions: ArticleTextContent;
+    projectResults: ArticleTextContent;
 }
 
 type ArticleViewProps = {

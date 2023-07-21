@@ -35,8 +35,8 @@
 
 
         </div>
-        <div>
-            sad
+        <div class="my-8">
+            <!-- TODO Tags and links -->
         </div>
 
 

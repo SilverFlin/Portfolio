@@ -1,7 +1,7 @@
 <template>
     <div class="h-screen min-h-screen">
         <div class="flex w-screen bg-fixed bg-center bg-cover h-2/3"
-            :style="{ backgroundImage: `url(${project!.imageName})` }">
+            :style="{ backgroundImage: `url(${projectsImagesDirPath}/${project!.imageName})` }">
             <div class="w-1/2 px-8 py-6 m-auto overflow-hidden bg-[#B8B2A7] h-1/2">
                 <h1 class="text-3xl font-bold uppercase">
                     {{ project!.name }}
@@ -14,11 +14,46 @@
         </div>
         <div class="px-32 my-8">
 
+            <template v-if="project!.description">
+                <h2 class="mt-3 text-3xl font-bold">Description</h2>
+                <p class="mt-8 text-justify">
+                    {{ project!.description }}
+                </p>
+            </template>
 
-
+            <template v-if="project!.projectExperience">
+                <h2 class="mt-8 text-3xl font-bold">Project Experience</h2>
+                <p class="mt-3 text-justify">
+                    {{ project!.projectExperience.text }}
+                </p>
+            </template>
+            <template v-if="project!.projectIntention">
+                <h2 class="mt-8 text-3xl font-bold">Project Intention</h2>
+                <p class="mt-3 text-justify">
+                    {{ project!.projectIntention.text }}
+                </p>
+            </template>
+            <template v-if="project!.projectChallenges">
+                <h2 class="mt-8 text-3xl font-bold">Challenges</h2>
+                <p class="mt-3 text-justify">
+                    {{ project!.projectChallenges.text }}
+                </p>
+            </template>
+            <template v-if="project!.projectSolutions">
+                <h2 class="mt-8 text-3xl font-bold">Solutions</h2>
+                <p class="mt-3 text-justify">
+                    {{ project!.projectSolutions.text }}
+                </p>
+            </template>
+            <template v-if="project!.projectResults">
+                <h2 class="mt-8 text-3xl font-bold">Results</h2>
+                <p class="mt-3 text-justify">
+                    {{ project!.projectResults.text }}
+                </p>
+            </template>
         </div>
-        <div>
-            sad
+        <div class="my-8">
+            <!-- TODO Tags and links -->
         </div>
 
 
@@ -32,6 +67,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { getProjectById } from '@/models/Projects';
 import type { ArticleTextContent, ArticleImageContent, ArticleCodeContent } from '@/types';
 import 'highlight.js/lib/common';
+import { projectsImagesDirPath } from '@/constants/paths';
 
 const route = useRoute();
 const router = useRouter();

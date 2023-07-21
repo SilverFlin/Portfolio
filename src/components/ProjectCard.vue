@@ -1,7 +1,7 @@
 <template>
-    <section
+    <section @click="loadProject"
         class="hover:drop-shadow-[0_10px_10px_black] w-60 p-0 mx-6 my-5 bg-[#B8B2A7] rounded-lg hover:scale-110 h-[25rem] hover:rotate-2 hover:cursor-pointer shrink-0 grow-0 max-h-[100%] max-w-[100%]">
-        <div class="w-full  bg-cover bg-center rounded-t-lg h-1/2"
+        <div class="w-full bg-center bg-cover rounded-t-lg h-1/2"
             :style="{ backgroundImage: `url(${projectsImagesDirPath}/${props.card.imageName})` }">
         </div>
         <div class="p-3">
@@ -35,9 +35,16 @@
 <script setup lang="ts">
 import type { ProjectCardProps, TechnologyLabel } from "@/types";
 import { projectsImagesDirPath } from "@/constants/paths";
+import router from "@/router";
+
 const props = defineProps<{ card: ProjectCardProps }>()
 
 const firstTwoTechnologies: TechnologyLabel[] = props.card.technologies.slice(0, 2);
 const restOfTechnologies: TechnologyLabel[] = props.card.technologies.slice(2);
+
+
+function loadProject(): void {
+    router.push(`/projects/${props.card.id}`);
+}
 
 </script>
