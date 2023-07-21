@@ -35,6 +35,11 @@ const CSSTechnologyLabel: TechnologyLabel = {
     color: "#1572B6"
 }
 
+const MongoDBTechnologyLabel: TechnologyLabel = {
+    name: "MongoDB",
+    color: "#47A248"
+}
+
 export {
     JavaTechnologyLabel,
     JavaScriptTechnologyLabel,
@@ -42,5 +47,6 @@ export {
     VueTechnologyLabel,
     TailwindTechnologyLabel,
     HTMLTechnologyLabel,
-    CSSTechnologyLabel
+    CSSTechnologyLabel,
+    MongoDBTechnologyLabel
 }

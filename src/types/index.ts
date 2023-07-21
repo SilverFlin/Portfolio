@@ -31,6 +31,20 @@ type TechnologyLabel = {
     color: string;
 }
 
+type ProjectViewProps = {
+    id: number;
+    name: string;
+    description: string;
+    date: Date;
+    imageName: string;
+    technologies: TechnologyLabel[];
+    projectExperience: ArticleContent;
+    projectIntention: ArticleContent;
+    projectChallenges: ArticleContent;
+    projectSolutions: ArticleContent;
+    projectResults: ArticleContent;
+}
+
 type ArticleViewProps = {
     id: number;
     title: string;
@@ -82,4 +96,5 @@ export type {
     ArticleTextContent,
     ArticleCodeContent,
     ArticleTitleContent,
+    ProjectViewProps
 }

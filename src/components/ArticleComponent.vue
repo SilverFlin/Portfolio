@@ -47,16 +47,14 @@
 <script setup lang="ts">
 import type { ArticleTitleContent, ArticleViewProps } from '@/types';
 import { useRoute, useRouter } from 'vue-router';
-import articles from '@/models/Articles';
+import { getArticleById } from '@/models/Articles';
 import type { ArticleTextContent, ArticleImageContent, ArticleCodeContent } from '@/types';
 import 'highlight.js/lib/common';
 
 const route = useRoute();
 const router = useRouter();
 
-const article = articles.find((a: ArticleViewProps) => {
-    return a.id === +route.params.id
-});
+const article: ArticleViewProps | undefined = getArticleById(+route.params.id);
 
 if (!article) {
     router.push({ name: 'home' });

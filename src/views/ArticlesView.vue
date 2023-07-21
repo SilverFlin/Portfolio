@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-wrap justify-around min-w-min max-w-screen-lg p-5 mx-auto mt-12 mb-12 bg-inherit min-h-min max-h-max">
+        class="flex flex-wrap justify-around max-w-screen-lg p-5 mx-auto mt-12 mb-12 min-w-min bg-inherit min-h-min max-h-max">
         <transition-group name="card">
             <div v-for="(card, idx) in cards" :key="idx">
                 <article-card :card="card"></article-card>
@@ -15,11 +15,11 @@ import type { ArticleCardProps } from "@/types";
 
 import { ref } from 'vue';
 import ArticleCard from '@/components/ArticleCard.vue';
-import articleCards from "@/models/ArticleCards";
+import { getArticlesCards } from "@/models/Articles";
 
 const cards: Ref<ArticleCardProps[]> = ref([])
 
-articleCards.forEach((card, idx) => {
+getArticlesCards().forEach((card, idx) => {
     setTimeout(() => {
         cards.value.push(card)
     }, idx * 800)
