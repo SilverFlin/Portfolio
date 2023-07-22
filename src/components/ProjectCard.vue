@@ -8,7 +8,7 @@
             <h1 class="relative text-xl font-bold uppercase truncate text-[#27241D]">
                 {{ props.card.name }}
             </h1>
-            <span class="right-0 text-base text-[#E8E6E1] lowercase">
+            <span class="font-mono right-0 text-base text-[#E8E6E1] lowercase">
                 {{ props.card.date.toLocaleString('default', { month: 'short', year: "numeric" }) }}
             </span>
             <p class="line-clamp-3">

@@ -6,7 +6,7 @@
                 <h1 class="text-3xl font-bold uppercase">
                     {{ article!.title }}
                 </h1>
-                <span class="right-0 mt-2 inline-block text-base text-[#504A40] lowercase">
+                <span class="font-mono right-0 mt-2 inline-block text-base text-[#504A40] lowercase">
                     {{ article!.date.toLocaleString('default', { day: '2-digit', month: 'short', year: "numeric" }) }}
                 </span>
             </div>

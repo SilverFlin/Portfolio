@@ -3,7 +3,7 @@
         <div class="flex justify-center">
             <quotes-svg class="text-[#b8b2a7]" :width="35" :height="35"></quotes-svg>
         </div>
-        <div class="flex text-[#625D52] justify-center w-1/2 my-6 text-center text-xl">
+        <div class="font-serif flex text-[#625D52] justify-center w-1/2 my-6 text-center text-xl">
             {{ props.card.message }}
         </div>
         <div class="flex items-center justify-center">
