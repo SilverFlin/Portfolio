@@ -16,7 +16,7 @@ const testimonialCards: TestimonialCardProps[] = [
         title: "Founder / CEO",
         studyHall: "Mathematics, Princeton University",
         company: "River Project",
-        message: "Lorem ipsum dolor sit amet consect",
+        message: "Luis is one of the most hardworking, kind, and passionate individuals I know. On a team with limited oversight, he was able to adjust to a novel framework and develop complex software he had never touched on before. I cannot recommend him enough to anyone interested in bringing on a competent and adaptable software developer. Luis was a wonderful addition to the River Project ecosystem and he would be just as wonderful an addition to your organization as well.",
         imageName: "zachary-plotkin.png",
         isActive: false
     },
