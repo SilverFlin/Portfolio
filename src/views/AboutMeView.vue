@@ -19,9 +19,20 @@
         </div>
         <div class="flex flex-col items-center justify-around w-4/6 h-full bg-blue-300">
             <div style="background-image: url('/src/assets/images/luistoledo.png');"
-                class="w-32 h-32 mt-5 bg-center bg-cover rounded-full shrink-0 grow-0">
+                class="absolute w-32 h-32 mt-5 bg-center bg-cover rounded-full top-10">
             </div>
-            <component :is="innerViews[currentViewIndex]" class="my-3 shrink-0 min-h-[30%] max-h-[30%]"></component>
+            <div class="absolute top-48">
+                <h2 @click="downloadResume"
+                    class="text-xl font-bold text-center underline uppercase cursor-pointer hover:text-2xl">
+                    Download My Resume
+                </h2>
+            </div>
+
+
+
+            <component :is="innerViews[currentViewIndex]" class="mt-52 shrink-0 min-h-[30%] max-h-[30%]">
+            </component>
+
             <div class="flex justify-around w-full">
                 <a target="_blank" href="https://www.linkedin.com/in/luis-angel-toledo-russo-19093822a/"
                     class="w-10 h-10 p-2 bg-red-200 rounded-full cursor-pointer">
@@ -129,5 +140,8 @@ const clearAllRendered = () => {
     isHobbiesRendered.value = false;
 }
 
+function downloadResume() {
+    window.open('/src/assets/files/Luis_Toledo_Resume.pdf', '_blank');
+}
 
 </script>
