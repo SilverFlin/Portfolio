@@ -1,7 +1,7 @@
 <template>
     <div class="h-screen min-h-screen">
         <div class="flex w-screen bg-fixed bg-center bg-cover h-2/3"
-            :style="{ backgroundImage: `url(${projectsImagesDirPath}/${project!.imageName})` }">
+            :style="getBackgroundImage(`${projectsImagesDirPath}/${project!.imageName}`)">
             <div class="w-1/2 px-8 py-6 m-auto overflow-hidden bg-secondary-200 h-1/2">
                 <h1 class="text-3xl font-bold uppercase">
                     {{ project!.name }}
@@ -65,6 +65,7 @@ import { getProjectById } from '@/models/Projects';
 import type { ArticleTextContent, ArticleImageContent, ArticleCodeContent } from '@/types';
 import 'highlight.js/lib/common';
 import { projectsImagesDirPath } from '@/constants/paths';
+import { getBackgroundImage } from '@/includes/importImages';
 
 const route = useRoute();
 const router = useRouter();

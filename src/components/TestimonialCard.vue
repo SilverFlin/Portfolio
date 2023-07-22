@@ -8,7 +8,7 @@
         </div>
         <div class="flex items-center justify-center">
             <div class="w-8 h-8 mr-3 bg-center bg-cover rounded-full"
-                :style="{ backgroundImage: `url(${testimonialsImagesDirPath}/${props.card.imageName})` }">
+                :style="getBackgroundImage(`${testimonialsImagesDirPath}/${props.card.imageName}`)">
             </div>
             <p class=" font-bold text-[#423D33]">
                 {{ props.card.name }} -
@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import type { TestimonialCardProps } from "@/types";
 import { testimonialsImagesDirPath } from "@/constants/paths";
-
+import { getBackgroundImage } from "@/includes/importImages";
 import quotesSvg from "@/icons/QuotesSvg.vue";
 
 interface Props {

@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="flex flex-col items-center justify-around w-4/6 h-full bg-blue-300">
-            <div style="background-image: url('/assets/images/luistoledo.png');"
+            <div :style="getBackgroundImage(`${baseImagesDirPath}/luistoledo.png`)"
                 class="absolute w-32 h-32 mt-5 bg-center bg-cover rounded-full top-10">
             </div>
             <div class="absolute top-48">
@@ -74,9 +74,12 @@ import CertificatesComponent from '@/components/AboutMe/CertificatesComponent.vu
 import SkillsComponent from '@/components/AboutMe/SkillsComponent.vue';
 import HobbiesComponent from '@/components/AboutMe/HobbiesComponent.vue';
 
+import { getBackgroundImage } from '@/includes/importImages';
+
 import { Icon } from '@iconify/vue';
 
 import { ref } from 'vue'
+import { baseImagesDirPath } from '@/constants/paths';
 
 const innerViews = [
     WhoAmIComponent,

@@ -1,8 +1,8 @@
-const homeImagesDirPath = "/assets/images/home";
-const projectsImagesDirPath = "/assets/images/projects";
-const articlesImagesDirPath = "/assets/images/articles";
-const testimonialsImagesDirPath = "/assets/images/testimonials";
-const baseImagesDirPath = "/assets/images";
+const baseImagesDirPath = "/Portfolio/assets/images";
+const homeImagesDirPath = `${baseImagesDirPath}/home`;
+const projectsImagesDirPath = `${baseImagesDirPath}/projects`;
+const articlesImagesDirPath = `${baseImagesDirPath}/articles`;
+const testimonialsImagesDirPath = `${baseImagesDirPath}/testimonials`;
 export {
     homeImagesDirPath,
     projectsImagesDirPath,

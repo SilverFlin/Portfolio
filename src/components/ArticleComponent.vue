@@ -1,7 +1,7 @@
 <template>
     <div class="h-screen min-h-screen">
         <div class="flex w-screen bg-fixed bg-center bg-cover h-2/3"
-            :style="{ backgroundImage: `url(${article!.coverImageURL})` }">
+            :style="getBackgroundImage(`url(${article!.coverImageURL})`)">
             <div class="w-1/2 px-8 py-6 m-auto overflow-hidden bg-[#B8B2A7] h-1/2">
                 <h1 class="text-3xl font-bold uppercase">
                     {{ article!.title }}
@@ -48,6 +48,7 @@
 import type { ArticleTitleContent, ArticleViewProps } from '@/types';
 import { useRoute, useRouter } from 'vue-router';
 import { getArticleById } from '@/models/Articles';
+import { getBackgroundImage } from '@/includes/importImages';
 import type { ArticleTextContent, ArticleImageContent, ArticleCodeContent } from '@/types';
 import 'highlight.js/lib/common';
 
