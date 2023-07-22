@@ -80,6 +80,7 @@ import { Icon } from '@iconify/vue';
 
 import { ref } from 'vue'
 import { baseImagesDirPath } from '@/constants/paths';
+import { getFileURL } from '@/includes/importFiles';
 
 const innerViews = [
     WhoAmIComponent,
@@ -144,7 +145,7 @@ const clearAllRendered = () => {
 }
 
 function downloadResume() {
-    window.open('/src/assets/files/Luis_Toledo_Resume.pdf', '_blank');
+    window.open(getFileURL('Luis_Toledo_Resume.pdf'), '_blank');
 }
 
 </script>

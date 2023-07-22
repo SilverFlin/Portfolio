@@ -1,4 +1,5 @@
 const baseImagesDirPath = "/Portfolio/assets/images";
+const baseFilesDirPath = "/Portfolio/assets/files";
 const homeImagesDirPath = `${baseImagesDirPath}/home`;
 const projectsImagesDirPath = `${baseImagesDirPath}/projects`;
 const articlesImagesDirPath = `${baseImagesDirPath}/articles`;
@@ -8,5 +9,6 @@ export {
     projectsImagesDirPath,
     articlesImagesDirPath,
     testimonialsImagesDirPath,
-    baseImagesDirPath
+    baseImagesDirPath,
+    baseFilesDirPath
 }
