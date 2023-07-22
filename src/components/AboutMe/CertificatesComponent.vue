@@ -3,7 +3,7 @@
         <h1 class="text-3xl font-bold text-center uppercase">Certificates</h1>
         <div class="h-full mt-3">
             <ul class="flex flex-col flex-wrap h-full">
-                <li v-for="(course, idx) in courses" :key="idx" class="flex mt-4 hover:bg-gray-200 cursor:pointer">
+                <li v-for="(course, idx) in courses" :key="idx" class="flex mt-4 hover:bg-secondary-200 cursor:pointer">
                     <Icon class="inline" height="20" :icon="course.icon" />
                     <a class="inline ml-3" :href="course.link" target="_blank">
                         {{ course.name }}

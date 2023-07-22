@@ -11,10 +11,12 @@
                 :style="{ backgroundImage: `url(${testimonialsImagesDirPath}/${props.card.imageName})` }">
             </div>
             <p class=" font-bold text-[#423D33]">
-                {{ card.name }} -
-                <span class="font-normal text-[#625d52]">
+                {{ props.card.name }} -
+                <span class="font-normal text-secondary-600">
                     {{ props.card.title }}, {{ props.card.company }}
                 </span>
+                <br>
+                <span class="italic font-normal">{{ props.card.studyHall }}</span>
             </p>
         </div>
     </div>

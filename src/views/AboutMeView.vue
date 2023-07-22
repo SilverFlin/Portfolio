@@ -3,17 +3,17 @@
         <div class="flex flex-col justify-around w-1/6 h-full py-8 bg-green-300">
             <div @click="clickWhoAmI"
                 :class="{ 'w-5/6': isWhoAmIRendered, 'w-3/6': !isWhoAmIRendered, 'hover:w-4/6': !isWhoAmIRendered }"
-                class="h-12 bg-purple-300 cursor-pointer text-end">
+                class="h-12 py-3 pr-3 rounded-r-lg cursor-pointer bg-primary-200 text-end">
                 Who am I
             </div>
             <div @click="clickEducation"
                 :class="{ 'w-5/6': isEducationRendered, 'w-3/6': !isEducationRendered, 'hover:w-4/6': !isEducationRendered }"
-                class="h-12 bg-purple-300 cursor-pointer text-end">
+                class="h-12 py-3 pr-3 rounded-r-lg cursor-pointer bg-primary-200 text-end">
                 Education
             </div>
             <div @click="clickExperience"
                 :class="{ 'w-5/6': isExperienceRendered, 'w-3/6': !isExperienceRendered, 'hover:w-4/6': !isExperienceRendered }"
-                class="h-12 bg-purple-300 cursor-pointer text-end">
+                class="h-12 py-3 pr-3 rounded-r-lg cursor-pointer bg-primary-200 text-end">
                 Experience
             </div>
         </div>
@@ -36,31 +36,31 @@
             <div class="flex justify-around w-full">
                 <a target="_blank" href="https://www.linkedin.com/in/luis-angel-toledo-russo-19093822a/"
                     class="w-10 h-10 p-2 bg-red-200 rounded-full cursor-pointer">
-                    <Icon width=" 25" icon="line-md:linkedin" />
+                    <Icon width="35" icon="line-md:linkedin" />
                 </a>
                 <a target="_blank" href="https://github.com/SilverFlin"
                     class="w-10 h-10 p-2 bg-red-200 rounded-full cursor-pointer">
-                    <Icon width="25" icon="line-md:github-loop" />
+                    <Icon width="35" icon="line-md:github-loop" />
                 </a>
                 <a href="mailto:toledorusso@outlook.com" class="w-10 h-10 p-2 bg-red-200 rounded-full cursor-pointer">
-                    <Icon width="25" icon="line-md:email" />
+                    <Icon width="35" icon="line-md:email" />
                 </a>
             </div>
         </div>
         <div class="flex flex-col items-end justify-around w-1/6 h-full py-8 bg-green-300">
             <div @click="clickCertificates"
                 :class="{ 'w-5/6': isCertificatesRendered, 'w-3/6': !isCertificatesRendered, 'hover:w-4/6': !isCertificatesRendered }"
-                class="h-12 bg-purple-300 cursor-pointer ">
+                class="h-12 py-3 pl-3 rounded-l-lg cursor-pointer bg-secondary-200">
                 Certificates
             </div>
             <div @click="clickSkills"
                 :class="{ 'w-5/6': isSkillsRendered, 'w-3/6': !isSkillsRendered, 'hover:w-4/6': !isSkillsRendered }"
-                class="h-12 bg-purple-300 cursor-pointer">
+                class="h-12 py-3 pl-3 rounded-l-lg cursor-pointer bg-secondary-200">
                 Skills
             </div>
             <div @click="clickHobbies"
                 :class="{ 'w-5/6': isHobbiesRendered, 'w-3/6': !isHobbiesRendered, 'hover:w-4/6': !isHobbiesRendered }"
-                class="h-12 bg-purple-300 cursor-pointer ">
+                class="h-12 py-3 pl-3 rounded-l-lg cursor-pointer bg-secondary-200">
                 Hobbies
             </div>
         </div>

@@ -14,6 +14,7 @@ const testimonialCards: TestimonialCardProps[] = [
         id: 2,
         name: "Zachary Plotkin",
         title: "Founder / CEO",
+        studyHall: "Mathematics, Princeton University",
         company: "River Project",
         message: "Lorem ipsum dolor sit amet consect",
         imageName: "zachary-plotkin.png",

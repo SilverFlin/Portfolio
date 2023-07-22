@@ -15,6 +15,5 @@ body {
   max-width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #E8E6E1;
 }
 </style>

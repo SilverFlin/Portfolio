@@ -2,6 +2,7 @@ type TestimonialCardProps = {
     id: number;
     name: string;
     title: string;
+    studyHall?: string;
     company: string;
     message: string;
     imageName?: string;
