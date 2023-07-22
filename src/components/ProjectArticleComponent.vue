@@ -2,24 +2,20 @@
     <div class="h-screen min-h-screen">
         <div class="flex w-screen bg-fixed bg-center bg-cover h-2/3"
             :style="{ backgroundImage: `url(${projectsImagesDirPath}/${project!.imageName})` }">
-            <div class="w-1/2 px-8 py-6 m-auto overflow-hidden bg-[#B8B2A7] h-1/2">
+            <div class="w-1/2 px-8 py-6 m-auto overflow-hidden bg-secondary-200 h-1/2">
                 <h1 class="text-3xl font-bold uppercase">
                     {{ project!.name }}
                 </h1>
                 <span class="right-0 mt-2 inline-block text-base text-[#504A40] lowercase">
                     {{ project!.date.toLocaleString('default', { day: '2-digit', month: 'short', year: "numeric" }) }}
                 </span>
-            </div>
-
-        </div>
-        <div class="px-32 my-8">
-
-            <template v-if="project!.description">
-                <h2 class="mt-3 text-3xl font-bold">Description</h2>
                 <p class="mt-8 text-justify">
                     {{ project!.description }}
                 </p>
-            </template>
+            </div>
+
+        </div>
+        <div class="w-2/3 px-32 py-16 mx-auto mb-8 ">
 
             <template v-if="project!.projectExperience">
                 <h2 class="mt-8 text-3xl font-bold">Project Experience</h2>
@@ -52,8 +48,9 @@
                 </p>
             </template>
         </div>
-        <div class="my-8">
+        <div class="">
             <!-- TODO Tags and links -->
+
         </div>
 
 

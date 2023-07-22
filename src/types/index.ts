@@ -41,8 +41,8 @@ type ProjectViewProps = {
     technologies: TechnologyLabel[];
     projectExperience: ArticleTextContent;
     projectIntention: ArticleTextContent;
-    projectChallenges: ArticleTextContent;
-    projectSolutions: ArticleTextContent;
+    projectChallenges?: ArticleTextContent;
+    projectSolutions?: ArticleTextContent;
     projectResults: ArticleTextContent;
 }
 
