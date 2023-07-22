@@ -1,52 +1,30 @@
-# portfolio
+# Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+July 21 2023
 
-## Recommended IDE Setup
+## Description
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This is my Personal Portfolio Website. It serves as a window to showcase my projects and thought process on each one of them. It was built using Vue.js, TypeScript, and Tailwind CSS. Without external components, just me.
 
-## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Project Experience
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+The integration of the stack of technologies that I used, i.e., VueJS, TS, and Tailwind CSS, made all the process smooth, I really enjoy how Vue make you structure the code (if you are using the composition API), and the way that you could work with the tailwind classes are just delightful. 
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-## Customize configuration
+## Project Intention
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+The main intention of this is to showcase my projects to the public and to add an enjoyable element to the process of documenting how I achieved each one. This serves not only my future self, but also for those who are interested in replicating similar projects.
 
-## Project Setup
+I have this idea of learning through application, I fell into the typical cycle of endless courses (as you could see on the about me / certifications section). However, I decided to stop this and instead start applying the technologies that I am learning.
 
-```sh
-npm install
-```
+It is also way more fun.
 
-### Compile and Hot-Reload for Development
+## Challenges
 
-```sh
-npm run dev
-```
+At the start, some components were hard to imagine how would I make them, especially the carousel on the home view.
+I just tried to figure it out and applied it to see how it behaves. It worked exactly as I wanted! Yay! It still lacks responsiveness with mobile devices, which is something that will be addressed in the next version. I also want more feedback to prioritize all the changes and improvements to be made.
 
-### Type-Check, Compile and Minify for Production
+## Results
 
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+The page is now running, and I am really satisfied with the result, it was a great experience, I learned a lot. There's still some work to do, and that's exciting.
