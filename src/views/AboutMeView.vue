@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="flex flex-col items-center justify-around w-4/6 h-full bg-blue-300">
-            <div style="background-image: url('/src/assets/images/luistoledo.png');"
+            <div style="background-image: url('/assets/images/luistoledo.png');"
                 class="absolute w-32 h-32 mt-5 bg-center bg-cover rounded-full top-10">
             </div>
             <div class="absolute top-48">

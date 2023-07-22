@@ -1,11 +1,12 @@
-const homeImagesDirPath = "/src/assets/images/home";
-const projectsImagesDirPath = "/src/assets/images/projects";
-const articlesImagesDirPath = "/src/assets/images/articles";
-const testimonialsImagesDirPath = "/src/assets/images/testimonials";
-
+const homeImagesDirPath = "/assets/images/home";
+const projectsImagesDirPath = "/assets/images/projects";
+const articlesImagesDirPath = "/assets/images/articles";
+const testimonialsImagesDirPath = "/assets/images/testimonials";
+const baseImagesDirPath = "/assets/images";
 export {
     homeImagesDirPath,
     projectsImagesDirPath,
     articlesImagesDirPath,
-    testimonialsImagesDirPath
+    testimonialsImagesDirPath,
+    baseImagesDirPath
 }
