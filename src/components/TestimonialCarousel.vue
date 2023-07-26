@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col justify-center max-h-screen min-h-screen py-8 overflow-hidden">
-        <div @scroll="moveCarousel"
-            class="flex w-full px-6 m-0 overflow-scroll testimonial-carousel scroll-px-6 remove-scrollbar h-2/3 snap-x snap-mandatory max-h-2/3 min-h-2/3 bg-inherit">
+        <div @scroll="moveCarousel" ref="testimonialCarousel"
+            class="flex w-full px-6 m-0 overflow-scroll scroll-px-6 remove-scrollbar h-2/3 snap-x snap-mandatory max-h-2/3 min-h-2/3 bg-inherit">
             <testimonial-card v-for="card in testimonialCards" :key="card.id" :card="card"></testimonial-card>
         </div>
         <div class="flex justify-center w-1/3 h-auto mx-auto mt-3 bg-inherit">
@@ -10,7 +10,8 @@
                     <Icon :width="30" class="text-[#504A40]" icon="line-md:circle-twotone" />
                 </template>
                 <template v-else>
-                    <Icon @click="switchToCard($event, idx)" :width="30" class="text-[#504A40] cursor-pointer" icon="fluent:circle-12-regular" />
+                    <Icon @click="switchToCard($event, idx)" :width="30" class="text-[#504A40] cursor-pointer"
+                        icon="fluent:circle-12-regular" />
                 </template>
             </div>
         </div>
@@ -26,13 +27,17 @@ import { Icon } from "@iconify/vue"
 import testimonialCardsData from "@/models/TestimonialCards"
 
 const testimonialCards: Ref<TestimonialCardProps[]> = ref(testimonialCardsData)
+const testimonialCarousel: Ref<Element | null> = ref(null)
+
 const DEFAULT_MOVE_TIME = 10 * 1000
 const carouselMoveTimer = ref(setInterval(autoMoveCarousel, DEFAULT_MOVE_TIME))
 
 
-function autoMoveCarousel(){
-    const carousel = document.querySelector('.testimonial-carousel') as Element
-    if(carousel.scrollLeft === carousel.scrollWidth - carousel.clientWidth){
+function autoMoveCarousel() {
+    const carousel = testimonialCarousel.value
+    if (!carousel) return
+
+    if (carousel.scrollLeft === carousel.scrollWidth - carousel.clientWidth) {
         carousel.scrollLeft = 0
         return
     }
@@ -40,21 +45,25 @@ function autoMoveCarousel(){
 }
 
 
-function switchToCard(evt,cardIdx){
+function switchToCard(_evt: Event, cardIdx: number): void {
     clearInterval(carouselMoveTimer.value)
     carouselMoveTimer.value = setInterval(autoMoveCarousel, DEFAULT_MOVE_TIME)
 
-    const carousel = document.querySelector('.testimonial-carousel') as Element
-    
-    for(let card of testimonialCards.value){
+    const carousel = testimonialCarousel.value
+    if (!carousel) return
+
+    for (let card of testimonialCards.value) {
         card.isActive = false
     }
-    
+
     testimonialCards.value[cardIdx].isActive = true
     carousel.scrollLeft = cardIdx * carousel.clientWidth
 }
 
-function moveCarousel(evt: Event) {
+function moveCarousel(evt: Event): void {
+    clearInterval(carouselMoveTimer.value)
+    carouselMoveTimer.value = setInterval(autoMoveCarousel, DEFAULT_MOVE_TIME)
+
     for (let card of testimonialCards.value) {
         card.isActive = false
     }
