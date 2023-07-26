@@ -1,6 +1,6 @@
 <template>
     <section @click="loadProject"
-        class="hover:drop-shadow-[0_10px_10px_black] w-60 p-0 mx-6 my-5 bg-secondary-300 rounded-lg hover:scale-110 h-[25rem] hover:rotate-2 hover:cursor-pointer shrink-0 grow-0 max-h-[100%] max-w-[100%]">
+        class="hover:drop-shadow-[0_10px_10px_black] w-60 p-0 mx-6 my-5 bg-secondary-300 rounded-lg hover:scale-110 h-[25rem] hover:rotate-2 hover:cursor-pointer shrink-0 grow-0 max-h-[100%] max-w-[100%] overflow-hidden">
         <div class="w-full bg-center bg-cover rounded-t-lg h-1/2"
             :style="getBackgroundImage(`${projectsImagesDirPath}/${props.card.imageName}`)">
         </div>
@@ -17,6 +17,7 @@
 
             <div class="flex justify-around mt-8">
 
+                
                 <span v-for="technology of firstTwoTechnologies" :key="technology.name"
                     class="px-2 py-0 text-sm rounded-full" :style="{ backgroundColor: `${technology.color}` }">
                     {{ technology.name }}

@@ -1,9 +1,9 @@
 <template>
     <div class="flex flex-row items-center justify-center max-h-screen min-h-screen px-32 overflow-hidden bg-secondary-100">
         <project-card v-for="card in projectCardsData" :key="card.id" :card="card"></project-card>
-        <div class="ml-32">
-            <router-link :to="{ name: 'projects' }">
-                <Icon width="4rem" icon="line-md:arrow-right" class="rounded-full cursor-pointer hover:text-primary-300" />
+        <div class="hidden ml-32 md:block">
+            <router-link :to="{ name: 'projects' }" >
+                <Icon width="4rem" icon="line-md:arrow-right" class="rounded-full cursor-pointer  hover:text-primary-300"/>
             </router-link>
         </div>
     </div>
