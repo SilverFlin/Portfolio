@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col min-h-screen max-h-screen overflow-hidden justify-center">
+    <div class="flex flex-col justify-center max-h-screen min-h-screen overflow-hidden">
         <div @scroll="moveCarousel"
-            class="flex w-full px-6 m-0 overflow-scroll scroll-px-6 remove-scrollbar h-2/3 snap-x snap-mandatory max-h-2/3 min-h-2/3  bg-inherit">
+            class="flex w-full px-6 m-0 overflow-scroll testimonial-carousel scroll-px-6 remove-scrollbar h-2/3 snap-x snap-mandatory max-h-2/3 min-h-2/3 bg-inherit">
             <testimonial-card v-for="card in testimonialCards" :key="card.id" :card="card"></testimonial-card>
         </div>
         <div class="flex justify-center w-1/3 h-auto mx-auto mt-3 bg-inherit">
@@ -26,6 +26,17 @@ import { Icon } from "@iconify/vue"
 import testimonialCardsData from "@/models/TestimonialCards"
 
 const testimonialCards: Ref<TestimonialCardProps[]> = ref(testimonialCardsData)
+
+function autoMoveCarousel(){
+    const carousel = document.querySelector('.testimonial-carousel') as Element
+    if(carousel.scrollLeft === carousel.scrollWidth - carousel.clientWidth){
+        carousel.scrollLeft = 0
+        return
+    }
+    carousel.scrollLeft += carousel.clientWidth
+}
+
+setInterval(autoMoveCarousel, 10000)
 
 
 function moveCarousel(evt: Event) {
