@@ -5,12 +5,12 @@
             <testimonial-card v-for="card in testimonialCards" :key="card.id" :card="card"></testimonial-card>
         </div>
         <div class="flex justify-center w-1/3 h-auto mx-auto mt-3 bg-inherit">
-            <div v-for="card in testimonialCards" :key="card.id" class="inline mx-2">
+            <div v-for="(card, idx) in testimonialCards" :key="idx" class="inline mx-2">
                 <template v-if="card.isActive">
                     <Icon :width="30" class="text-[#504A40]" icon="line-md:circle-twotone" />
                 </template>
                 <template v-else>
-                    <Icon :width="30" class="text-[#504A40]" icon="fluent:circle-12-regular" />
+                    <Icon @click="switchToCard($event, idx)" :width="30" class="text-[#504A40] cursor-pointer" icon="fluent:circle-12-regular" />
                 </template>
             </div>
         </div>
@@ -26,6 +26,9 @@ import { Icon } from "@iconify/vue"
 import testimonialCardsData from "@/models/TestimonialCards"
 
 const testimonialCards: Ref<TestimonialCardProps[]> = ref(testimonialCardsData)
+const DEFAULT_MOVE_TIME = 10 * 1000
+const carouselMoveTimer = ref(setInterval(autoMoveCarousel, DEFAULT_MOVE_TIME))
+
 
 function autoMoveCarousel(){
     const carousel = document.querySelector('.testimonial-carousel') as Element
@@ -36,8 +39,20 @@ function autoMoveCarousel(){
     carousel.scrollLeft += carousel.clientWidth
 }
 
-setInterval(autoMoveCarousel, 10000)
 
+function switchToCard(evt,cardIdx){
+    clearInterval(carouselMoveTimer.value)
+    carouselMoveTimer.value = setInterval(autoMoveCarousel, DEFAULT_MOVE_TIME)
+
+    const carousel = document.querySelector('.testimonial-carousel') as Element
+    
+    for(let card of testimonialCards.value){
+        card.isActive = false
+    }
+    
+    testimonialCards.value[cardIdx].isActive = true
+    carousel.scrollLeft = cardIdx * carousel.clientWidth
+}
 
 function moveCarousel(evt: Event) {
     for (let card of testimonialCards.value) {
