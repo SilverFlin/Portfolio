@@ -1,5 +1,5 @@
 <template>
-    <div class="w-1/2 h-full mx-[25%] bg-inherit shrink-0 snap-center flex flex-col justify-center items-center">
+    <div class="w-full h-full mx-[25%] bg-inherit shrink-0 snap-center flex flex-col justify-center items-center">
         <div class="flex justify-center">
             <quotes-svg class="text-[#b8b2a7]" :width="35" :height="35"></quotes-svg>
         </div>
