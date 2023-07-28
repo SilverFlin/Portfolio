@@ -3,7 +3,7 @@
         <ul class="justify-around hidden lg:flex px-80">
             <li v-for="route in routes" :key="route.name" class="">
                 <router-link :to="{ name: route.name }"
-                    class="font-bold uppercase text-secondary-500 hover:text-primary-400" active-class="text-primary-600">
+                    class="font-bold uppercase text-secondary-500 hover:text-primary-400" active-class="text-primary-500">
                     {{ route.name }}
                 </router-link>
             </li>
@@ -24,7 +24,7 @@
                         {{ route.name }}
                     </router-link>
                     <template v-if="routes.indexOf(route) !== routes.length - 1">
-                        <hr class="text-secondary-400">
+                        <hr class="text-secondary-500">
                     </template>
                 </li>
             </ul>
