@@ -1,9 +1,9 @@
 <template>
-    <div class="w-full h-full mx-[25%] bg-inherit shrink-0 snap-center flex flex-col justify-center items-center">
+    <div class="flex flex-col items-center justify-center w-full h-full mx-4 bg-inherit shrink-0 snap-center">
         <div class="flex justify-center">
-            <quotes-svg class="text-[#b8b2a7]" :width="35" :height="35"></quotes-svg>
+            <quotes-svg class="text-secondary-700" :width="35" :height="35"></quotes-svg>
         </div>
-        <div class="font-serif flex text-[#625D52] justify-center w-1/2 my-6 text-center text-xl">
+        <div class="font-serif flex text-[#625D52] justify-center w-full lg:w-2/3 my-6 text-center text-xl">
             {{ props.card.message }}
         </div>
         <div class="flex items-center justify-center">

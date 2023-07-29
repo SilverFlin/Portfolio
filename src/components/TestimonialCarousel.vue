@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col justify-center max-h-screen min-h-screen py-8 overflow-hidden">
         <div @scroll="moveCarousel" ref="testimonialCarousel"
-            class="flex w-full px-6 m-0 overflow-scroll scroll-px-6 remove-scrollbar h-2/3 snap-x snap-mandatory max-h-2/3 min-h-2/3 bg-inherit">
+            class="flex items-center w-full px-6 m-0 overflow-scroll scroll-px-6 remove-scrollbar h-2/3 snap-x snap-mandatory max-h-2/3 min-h-2/3 bg-inherit">
             <testimonial-card v-for="card in testimonialCards" :key="card.id" :card="card"></testimonial-card>
         </div>
         <div class="flex justify-center w-1/3 h-auto mx-auto mt-3 bg-inherit">
