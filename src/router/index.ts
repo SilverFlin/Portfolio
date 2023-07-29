@@ -46,4 +46,8 @@ const router = createRouter({
   ]
 })
 
+export function returnPage() {
+  router.back()
+}
+
 export default router

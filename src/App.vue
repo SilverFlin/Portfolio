@@ -1,11 +1,20 @@
 <template>
   <header-component></header-component>
-  <router-view>
+  <router-view @click="closeNavMenuIfExist" @scroll="closeNavMenuIfExist">
   </router-view>
 </template>
 
 <script setup lang="ts">
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import { useNavMenu } from "./stores/navMenu";
+
+const navMenuStore = useNavMenu();
+
+function closeNavMenuIfExist() {
+  if (navMenuStore.isOpen) {
+    navMenuStore.close()
+  }
+}
 
 </script>
 

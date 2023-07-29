@@ -1,5 +1,10 @@
 <template>
     <nav class="fixed z-10 w-full top-3 bg-inherit">
+
+        <Icon @click="returnPage" width="2rem" icon="line-md:arrow-left"
+            class="absolute rounded-full cursor-pointer hover:text-primary-300 top-15 left-10" />
+
+
         <ul class="justify-around hidden lg:flex px-80">
             <li v-for="route in routes" :key="route.name" class="">
                 <router-link :to="{ name: route.name }"
@@ -9,15 +14,16 @@
             </li>
         </ul>
 
-        <div class="flex w-full px-8 lg:hidden">
-            <button @click="toggleDropDown" class=" text-secondary-800" :class="{ 'bg-secondary-300': showDropDown }">
-                <Icon width="32" height="32" icon="ci:hamburger-lg" />
-            </button>
+        <button @click="navMenuStore.toggle" class="absolute lg:hidden right-10 text-secondary-800"
+            :class="{ 'bg-secondary-300': navMenuStore.isOpen }">
+            <Icon width="32" height="32" icon="ci:hamburger-lg" />
+        </button>
 
-        </div>
+
+
         <transition name="dropdown">
-            <ul class="mx-8 bg-secondary-300 lg:hidden " v-if="showDropDown">
-                <li v-for="route in routes" :key="route.name" @click="toggleDropDown" class="px-4">
+            <ul class="absolute w-full mt-10 bg-secondary-300 lg:hidden " v-if="navMenuStore.isOpen">
+                <li v-for="route in routes" :key="route.name" class="px-4">
                     <router-link :to="{ name: route.name }"
                         class="block w-full h-full px-4 py-2 font-bold uppercase text-secondary-500 hover:text-primary-400"
                         active-class="text-primary-600">
@@ -29,24 +35,20 @@
                 </li>
             </ul>
         </transition>
-
-
     </nav>
 </template>
 
 <script setup lang="ts">
 import router from "@/router";
 import { Icon } from "@iconify/vue";
-import { ref } from "vue";
+import { returnPage } from "@/router";
+import { useNavMenu } from '@/stores/navMenu'
+
+const navMenuStore = useNavMenu()
+
+
 
 const navBarRoutes = ['home', 'about me', 'projects', 'articles']
-
-const showDropDown = ref(false)
-
-function toggleDropDown() {
-    showDropDown.value = !showDropDown.value
-}
-
 
 const routes = router.getRoutes().filter((route) => navBarRoutes.includes(route.name?.toString() ?? ''));
 </script>
