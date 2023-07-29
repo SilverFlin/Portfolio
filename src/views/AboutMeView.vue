@@ -47,9 +47,10 @@
             </div>
 
 
-
-            <component :is="innerViews[currentViewIndex]">
-            </component>
+            <div class="my-auto">
+                <component :is="innerViews[currentViewIndex]">
+                </component>
+            </div>
 
             <div class="flex justify-around w-full mt-auto mb-5">
                 <a target="_blank" href="https://www.linkedin.com/in/luis-angel-toledo-russo-19093822a/"
