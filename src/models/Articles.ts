@@ -21,7 +21,7 @@ const articleMap: Map<number, ArticleViewProps> = new Map();
 articleMap.set(1, {
     id: 1,
     title: 'Getting Started with TypeScript in Vue.js: A Powerful Combination for Modern Web Development',
-    coverImageURL: 'https://images.unsplash.com/photo-1682685797769-481b48222adf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    coverImageURL: 'vue-typescript.png',
     description: 'In this article, we\'ll explore how to harness the power of TypeScript in Vue.js, combining the benefits of a typed language with the flexibility of a progressive JavaScript framework...',
     content: [
         {

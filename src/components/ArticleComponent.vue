@@ -1,9 +1,9 @@
 <template>
     <div class="h-screen min-h-screen">
         <div class="flex w-screen bg-fixed bg-center bg-cover h-2/3"
-            :style="getBackgroundImage(`url(${article!.coverImageURL})`)">
-            <div class="w-1/2 px-8 py-6 m-auto overflow-hidden bg-[#B8B2A7] h-1/2">
-                <h1 class="text-3xl font-bold uppercase">
+            :style="getBackgroundImage(`${articlesImagesDirPath}/${article?.coverImageURL}`)">
+            <div class="w-3/4 px-8 py-6 m-auto overflow-hidden bg-secondary-300 ">
+                <h1 class="text-3xl font-bold uppercase ">
                     {{ article!.title }}
                 </h1>
                 <span class="font-mono right-0 mt-2 inline-block text-base text-[#504A40] lowercase">
@@ -12,7 +12,7 @@
             </div>
 
         </div>
-        <div class="px-32 my-8">
+        <div class="px-4 my-8 lg:px-16">
             <template v-for="(content, idx) in article!.content" :key="idx">
                 <template v-if="content.type === 'text'">
                     <p class="mt-8 text-justify">
@@ -51,6 +51,7 @@ import { getArticleById } from '@/models/Articles';
 import { getBackgroundImage } from '@/includes/importImages';
 import type { ArticleTextContent, ArticleImageContent, ArticleCodeContent } from '@/types';
 import 'highlight.js/lib/common';
+import { articlesImagesDirPath } from '@/constants/paths';
 
 const route = useRoute();
 const router = useRouter();

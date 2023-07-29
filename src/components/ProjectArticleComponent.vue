@@ -2,7 +2,7 @@
     <div class="h-screen min-h-screen">
         <div class="flex w-screen bg-fixed bg-center bg-cover h-2/3"
             :style="getBackgroundImage(`${projectsImagesDirPath}/${project!.imageName}`)">
-            <div class="w-1/2 px-8 py-6 m-auto overflow-hidden bg-secondary-200 h-1/2">
+            <div class="w-3/4 px-8 py-6 m-auto overflow-hidden bg-secondary-200">
                 <h1 class="text-3xl font-bold uppercase">
                     {{ project!.name }}
                 </h1>
@@ -15,7 +15,7 @@
             </div>
 
         </div>
-        <div class="w-2/3 px-32 py-16 mx-auto mb-8 ">
+        <div class="px-4 py-16 mb-8 lg:px-16 ">
 
             <template v-if="project!.projectExperience">
                 <h2 class="mt-8 text-3xl font-bold">Project Experience</h2>
