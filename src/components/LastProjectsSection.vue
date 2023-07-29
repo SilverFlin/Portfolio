@@ -5,7 +5,7 @@
         </h1>
         <div class="flex flex-row items-center justify-center h-2/3">
             <project-card v-for="card in projectCardsData" :key="card.id" :card="card"></project-card>
-            <div class="hidden ml-32 md:block">
+            <div class="lg:ml-24">
                 <router-link :to="{ name: 'projects' }">
                     <Icon width="4rem" icon="line-md:arrow-right"
                         class="rounded-full cursor-pointer hover:text-primary-300" />

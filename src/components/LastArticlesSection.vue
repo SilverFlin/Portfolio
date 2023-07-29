@@ -6,7 +6,7 @@
         <div class="flex flex-row items-center justify-center h-2/3">
 
             <article-card v-for="card in articleCardsData" :key="card.id" :card="card"></article-card>
-            <div class="hidden ml-32 md:block">
+            <div class="lg:ml-24">
                 <router-link :to="{ name: 'articles' }">
                     <Icon width="4rem" icon="line-md:arrow-right"
                         class="rounded-full cursor-pointer hover:text-secondary-600" />
