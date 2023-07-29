@@ -1,6 +1,6 @@
 <template>
   <main
-    class="scroll-smooth snap-mandatory snap-y remove-scroll h-screen h-min-screen h-max-screen remove-scrollbar overflow-scroll">
+    class="h-screen overflow-scroll scroll-smooth snap-mandatory snap-y remove-scroll h-min-screen h-max-screen remove-scrollbar">
     <introduction-section class="snap-center"></introduction-section>
     <last-projects-section class="snap-center"></last-projects-section>
     <testimonial-carousel class="snap-center"></testimonial-carousel>
