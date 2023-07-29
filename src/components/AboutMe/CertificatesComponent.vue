@@ -1,5 +1,5 @@
 <template>
-    <div class="w-3/4">
+    <div>
         <h1 class="text-3xl font-bold text-center uppercase">Certificates</h1>
         <div class="h-full mt-3">
             <ul class="flex flex-col flex-wrap h-full">

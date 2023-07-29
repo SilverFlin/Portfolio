@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row w-screen h-screen max-h-screen min-h-screen overflow-hidden bg-red-300">
+    <div class="flex flex-row w-screen h-screen min-h-screen bg-red-300">
         <div class="flex flex-col justify-around w-1/6 h-full py-8 bg-green-300">
             <left-label :setCurrentViewIndex="setCurrentViewIndex" :indexComponent="innerViews.indexOf(WhoAmIComponent)"
                 :currentViewIndex="currentViewIndex">
@@ -34,23 +34,24 @@
 
             </left-label>
         </div>
-        <div class="flex flex-col items-center justify-around w-4/6 h-full bg-blue-300">
+
+        <div class="flex flex-col items-center justify-start w-4/6 ">
             <div :style="getBackgroundImage(`${baseImagesDirPath}/luistoledo.png`)"
-                class="absolute w-32 h-32 mt-5 bg-center bg-cover rounded-full top-10">
+                class="w-32 h-32 mt-12 bg-center bg-cover rounded-full shrink-0">
             </div>
-            <div class="absolute top-48">
+            <div class="">
                 <h2 @click="downloadResume"
-                    class="text-xl font-bold text-center underline uppercase cursor-pointer hover:text-2xl">
+                    class="mb-8 text-xl font-bold text-center underline uppercase cursor-pointer hover:text-2xl text-primary-800">
                     Download My Resume
                 </h2>
             </div>
 
 
 
-            <component :is="innerViews[currentViewIndex]" class="mt-52 shrink-0 min-h-[30%] max-h-[30%]">
+            <component :is="innerViews[currentViewIndex]">
             </component>
 
-            <div class="flex justify-around w-full">
+            <div class="flex justify-around w-full mt-auto mb-5">
                 <a target="_blank" href="https://www.linkedin.com/in/luis-angel-toledo-russo-19093822a/"
                     class="w-10 h-10 p-2 bg-red-200 rounded-full cursor-pointer">
                     <Icon width="35" icon="line-md:linkedin" />
@@ -64,6 +65,7 @@
                 </a>
             </div>
         </div>
+
         <div class="flex flex-col items-end justify-around w-1/6 h-full py-8 bg-green-300">
 
             <right-label :setCurrentViewIndex="setCurrentViewIndex"

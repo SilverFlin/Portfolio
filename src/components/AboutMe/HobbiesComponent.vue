@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="flex flex-col items-center justify-center px-10">
+        <div class="flex flex-col items-center justify-center ">
             <h1 class="text-3xl font-bold text-center uppercase">
                 Hobbies
             </h1>

@@ -1,5 +1,5 @@
 <template>
-    <div class="px-16">
+    <div>
         <h1 class="text-3xl font-bold text-center uppercase">
             Who Am I
         </h1>
