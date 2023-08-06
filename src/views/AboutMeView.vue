@@ -36,7 +36,7 @@
         </div>
 
         <div class="flex flex-col items-center justify-start w-4/6 ">
-            <div :style="getBackgroundImage(`${baseImagesDirPath}/luistoledo.png`)"
+            <div :style="getBackgroundImage(`${baseImagesDirPath}/luistoledo.jpg`)"
                 class="w-32 h-32 mt-12 bg-center bg-cover rounded-full shrink-0">
             </div>
             <div class="">
