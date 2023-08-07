@@ -19,6 +19,8 @@
             <Icon width="32" height="32" icon="ci:hamburger-lg" />
         </button>
 
+        <Icon @click="toggleDarkMode" width="2rem" icon="line-md:light-dark"
+            class="absolute hidden rounded-full cursor-not-allowed lg:block -top-0 hover:text-secondary-300 right-10" />
 
 
         <transition name="dropdown">
@@ -35,6 +37,7 @@
                 </li>
             </ul>
         </transition>
+
     </nav>
 </template>
 
@@ -43,10 +46,14 @@ import router from "@/router";
 import { Icon } from "@iconify/vue";
 import { returnPage } from "@/router";
 import { useNavMenu } from '@/stores/navMenu'
+import { useSelectedThemeStore } from "@/stores/selectedTheme";
 
 const navMenuStore = useNavMenu()
+const selectedThemeStore = useSelectedThemeStore()
 
-
+const toggleDarkMode = () => {
+    selectedThemeStore.toggleDarkMode()
+}
 
 const navBarRoutes = ['home', 'about me', 'projects', 'articles']
 
