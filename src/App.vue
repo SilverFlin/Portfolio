@@ -6,8 +6,7 @@
 
 <script setup lang="ts">
 import HeaderComponent from "@/components/HeaderComponent.vue";
-import { useNavMenu } from "./stores/navMenu";
-
+import { useNavMenu } from "@/stores/navMenu";
 const navMenuStore = useNavMenu();
 
 function closeNavMenuIfExist() {

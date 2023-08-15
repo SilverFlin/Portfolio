@@ -11,20 +11,23 @@
 
 <script setup lang="ts">
 import type { Ref } from "vue"
-import type { ArticleCardProps } from "@/types";
+import type { Article } from "@/types";
 
 import { ref } from 'vue';
 import ArticleCard from '@/components/ArticleCard.vue';
-import { getArticlesCards } from "@/models/Articles";
+import { getAllArticles } from "@/content";
 
-const cards: Ref<ArticleCardProps[]> = ref([])
 
-getArticlesCards().forEach((card, idx) => {
-    setTimeout(() => {
-        cards.value.push(card)
-    }, idx * 800)
-})
+const cards: Ref<Article[]> = ref([])
 
+getAllArticles()
+    .then((res) => {
+        res.forEach((card, idx) => {
+            setTimeout(() => {
+                cards.value.push(card)
+            }, idx * 800)
+        })
+    })
 
 </script>
 

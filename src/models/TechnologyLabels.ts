@@ -40,6 +40,31 @@ const MongoDBTechnologyLabel: TechnologyLabel = {
     color: "#47A248"
 }
 
+function getLabel(technology: string): TechnologyLabel {
+    switch (technology.toLowerCase()) {
+        case "java":
+            return JavaTechnologyLabel;
+        case "javascript":
+            return JavaScriptTechnologyLabel;
+        case "typescript":
+            return TypeScriptTechnologyLabel;
+        case "vue":
+        case "vue.js":
+            return VueTechnologyLabel;
+        case "tailwind":
+        case "tailwind css":
+            return TailwindTechnologyLabel;
+        case "html":
+            return HTMLTechnologyLabel;
+        case "css":
+            return CSSTechnologyLabel;
+        case "mongodb":
+            return MongoDBTechnologyLabel;
+        default:
+            throw new Error(`Technology ${technology} is not supported.`);
+    }
+}
+
 export {
     JavaTechnologyLabel,
     JavaScriptTechnologyLabel,
@@ -48,5 +73,6 @@ export {
     TailwindTechnologyLabel,
     HTMLTechnologyLabel,
     CSSTechnologyLabel,
-    MongoDBTechnologyLabel
+    MongoDBTechnologyLabel,
+    getLabel
 }

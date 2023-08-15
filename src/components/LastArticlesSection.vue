@@ -17,11 +17,17 @@
 </template>
 
 <script setup lang="ts">
-import { getArticlesCards } from '@/models/Articles';
+import { getAllArticles } from '@/content';
 import ArticleCard from './ArticleCard.vue';
 import { Icon } from '@iconify/vue';
+import type { Article } from '@/types';
+import { ref } from 'vue';
 
 const limitCards = 2;
-const articleCardsData = getArticlesCards().slice(0, limitCards);
+let articleCardsData = ref([] as Article[]);
+getAllArticles()
+    .then((articles) => {
+        articleCardsData.value = articles.slice(0, limitCards);
+    })
 
 </script>
