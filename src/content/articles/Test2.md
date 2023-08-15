@@ -1,8 +1,8 @@
 ---
 id: Hello-World
 title: My Cool App2
-description: This is a description of my cool app.
 date: 2023-08-14
+description: This is a description of my cool app.
 rawTags: [vue, typescript, javascript]
 imageName: vue-typescript.png
 ---

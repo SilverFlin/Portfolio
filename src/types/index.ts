@@ -37,6 +37,10 @@ interface Article {
     imageName: string;
 }
 
+interface Project extends Article {
+
+}
+
 interface MarkdownResponse extends Article {
     default: ComponentOptions;
     rawTags: string[];
@@ -47,5 +51,6 @@ export type {
     ProjectCardProps,
     TechnologyLabel,
     Article,
+    Project,
     MarkdownResponse
 }

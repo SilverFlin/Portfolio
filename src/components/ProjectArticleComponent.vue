@@ -17,36 +17,7 @@
         </div>
         <div class="px-4 py-16 mb-8 lg:px-16 ">
 
-            <template v-if="project!.projectExperience">
-                <h2 class="mt-8 text-3xl font-bold">Project Experience</h2>
-                <p class="mt-3 text-justify">
-                    {{ project!.projectExperience.text }}
-                </p>
-            </template>
-            <template v-if="project!.projectIntention">
-                <h2 class="mt-8 text-3xl font-bold">Project Intention</h2>
-                <p class="mt-3 text-justify">
-                    {{ project!.projectIntention.text }}
-                </p>
-            </template>
-            <template v-if="project!.projectChallenges">
-                <h2 class="mt-8 text-3xl font-bold">Challenges</h2>
-                <p class="mt-3 text-justify">
-                    {{ project!.projectChallenges.text }}
-                </p>
-            </template>
-            <template v-if="project!.projectSolutions">
-                <h2 class="mt-8 text-3xl font-bold">Solutions</h2>
-                <p class="mt-3 text-justify">
-                    {{ project!.projectSolutions.text }}
-                </p>
-            </template>
-            <template v-if="project!.projectResults">
-                <h2 class="mt-8 text-3xl font-bold">Results</h2>
-                <p class="mt-3 text-justify">
-                    {{ project!.projectResults.text }}
-                </p>
-            </template>
+            <component :is="project.component" />
         </div>
         <div class="">
             <!-- TODO Tags and links -->
@@ -59,21 +30,23 @@
 </template>
 
 <script setup lang="ts">
-import type { ArticleTitleContent, ArticleViewProps } from '@/types';
 import { useRoute, useRouter } from 'vue-router';
-import { getProjectById } from '@/models/Projects';
-import type { ArticleTextContent, ArticleImageContent, ArticleCodeContent } from '@/types';
 import 'highlight.js/lib/common';
 import { projectsImagesDirPath } from '@/constants/paths';
 import { getBackgroundImage } from '@/includes/importImages';
+import { getProjectById } from '@/content';
+import { ref } from 'vue';
+import type { Project } from '@/types';
 
 const route = useRoute();
 const router = useRouter();
-
-const project = getProjectById(+route.params.id);
-
-if (!project) {
-    router.push({ name: 'home' });
-}
+let project = ref()
+getProjectById(route.params.id as string)
+    .then((p: Project) => {
+        project.value = p;
+    }).catch((_e) => {
+        console.error("Project not found")
+        router.push({ name: 'home' })
+    })
 
 </script>

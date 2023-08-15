@@ -37,7 +37,7 @@ let article = ref();
 getArticleById(route.params.id as string)
     .then((a: Article) => {
         article.value = a;
-    }).catch((e) => {
+    }).catch((_e) => {
         console.error("Article not found")
         router.push({ name: 'home' })
     })

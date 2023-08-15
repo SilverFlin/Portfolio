@@ -18,9 +18,16 @@
 <script setup lang="ts">
 import ProjectCard from './ProjectCard.vue';
 import { Icon } from '@iconify/vue';
-import { getProjectCards } from '@/models/Projects';
+import type { Project } from '@/types';
+import { getAllProjects } from '@/content';
+import { ref } from 'vue';
 
 const limitCards = 2;
-const projectCardsData = getProjectCards().slice(0, limitCards);
+
+let projectCardsData = ref([] as Project[]);
+getAllProjects()
+    .then((projects) => {
+        projectCardsData.value = projects.slice(0, limitCards);
+    })
 
 </script>

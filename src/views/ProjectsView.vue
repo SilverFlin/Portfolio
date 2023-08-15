@@ -11,20 +11,22 @@
 
 <script setup lang="ts">
 import type { Ref } from "vue"
-import type { ProjectCardProps } from "@/types";
 
 import { ref } from 'vue';
 import ProjectCard from '@/components/ProjectCard.vue';
-import { getProjectCards } from "@/models/Projects"
+import type { Project } from "@/types";
+import { getAllProjects } from "@/content";
 
-const cards: Ref<ProjectCardProps[]> = ref([])
+const cards: Ref<Project[]> = ref([])
 
-getProjectCards().forEach((card, idx) => {
-    setTimeout(() => {
-        cards.value.push(card)
-    }, idx * 800)
-})
-
+getAllProjects()
+    .then((res) => {
+        res.forEach((card, idx) => {
+            setTimeout(() => {
+                cards.value.push(card)
+            }, idx * 800)
+        })
+    })
 
 </script>
 
