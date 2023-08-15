@@ -10,12 +10,13 @@
                     {{ article!.date.toLocaleString('default', { day: '2-digit', month: 'short', year: "numeric" }) }}
                 </span>
             </div>
-
         </div>
 
-        <component :is="article.component" />
+        <div class="px-4 py-16 mb-8 lg:px-16 ">
+            <component :is="article.component" />
+        </div>
 
-        <div class="my-8">
+        <div class="">
             <!-- TODO Tags and links -->
         </div>
     </div>
@@ -28,7 +29,8 @@ import 'highlight.js/lib/common';
 import { articlesImagesDirPath } from '@/constants/paths';
 import type { Article } from '@/types';
 import { getArticleById } from '@/content';
-import { ref } from 'vue';
+import { ref, shallowRef } from 'vue';
+import { setTailwindClassesOnMarkdown } from '@/includes/classLoader';
 
 const route = useRoute();
 const router = useRouter()
@@ -36,8 +38,13 @@ const router = useRouter()
 let article = ref();
 getArticleById(route.params.id as string)
     .then((a: Article) => {
+        a.component = shallowRef(a.component)
         article.value = a;
-    }).catch((_e) => {
+    })
+    .then(() => {
+        setTailwindClassesOnMarkdown(document)
+    })
+    .catch((_e) => {
         console.error("Article not found")
         router.push({ name: 'home' })
     })
