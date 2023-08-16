@@ -29,17 +29,15 @@
 </template>
 
 <script setup lang="ts">
-import type { ArticleCardProps, TechnologyLabel } from "@/types";
+import type { Article, TechnologyLabel } from "@/types";
 import { articlesImagesDirPath } from "@/constants/paths";
 import router from "@/router";
 import { getBackgroundImage } from "@/includes/importImages";
 
-const props = defineProps<{ card: ArticleCardProps }>()
+const props = defineProps<{ card: Article }>()
 
 const firstTwoTechnologies: TechnologyLabel[] = props.card.tags.slice(0, 2);
 const restOfTechnologies: TechnologyLabel[] = props.card.tags.slice(2);
-
-
 
 function loadArticle(): void {
     router.push(`/articles/${props.card.id}`);

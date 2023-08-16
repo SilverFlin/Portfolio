@@ -1,3 +1,5 @@
+import type { ComponentOptions } from "vue";
+
 type TestimonialCardProps = {
     id: number;
     name: string;
@@ -18,84 +20,37 @@ type ProjectCardProps = {
     technologies: TechnologyLabel[];
 }
 
-type ArticleCardProps = {
-    id: number;
-    title: string;
-    description: string;
-    date: Date;
-    imageName: string;
-    tags: TechnologyLabel[];
-}
+
 
 type TechnologyLabel = {
     name: string;
     color: string;
 }
 
-type ProjectViewProps = {
-    id: number;
-    name: string;
-    description: string;
-    date: Date;
-    imageName: string;
-    technologies: TechnologyLabel[];
-    projectExperience: ArticleTextContent;
-    projectIntention: ArticleTextContent;
-    projectChallenges?: ArticleTextContent;
-    projectSolutions?: ArticleTextContent;
-    projectResults: ArticleTextContent;
-}
-
-type ArticleViewProps = {
-    id: number;
+interface Article {
+    id: string;
     title: string;
+    description?: string;
     date: Date;
-    coverImageURL: string;
-    description: string;
-    content: ArticleContent[];
+    component: ComponentOptions
     tags: TechnologyLabel[];
+    imageName: string;
 }
 
-interface ArticleContent {
-    type: 'image' | 'text' | 'code' | 'title';
+interface Project extends Article {
+
 }
 
-interface ArticleImageContent extends ArticleContent {
-    type: 'image';
-    url: string;
-    description: string;
+interface MarkdownResponse extends Article {
+    default: ComponentOptions;
+    rawTags: string[];
 }
-
-interface ArticleTextContent extends ArticleContent {
-    type: 'text';
-    text: string;
-}
-
-interface ArticleTitleContent extends ArticleContent {
-    type: 'title';
-    title: string;
-}
-
-interface ArticleCodeContent extends ArticleContent {
-    type: 'code';
-    code: string;
-    language: string;
-}
-
-
-
-
 
 export type {
     TestimonialCardProps,
     ProjectCardProps,
     TechnologyLabel,
-    ArticleCardProps,
-    ArticleViewProps,
-    ArticleContent,
-    ArticleImageContent,
-    ArticleTextContent,
-    ArticleCodeContent,
-    ArticleTitleContent,
-    ProjectViewProps
+    Article,
+    Project,
+    MarkdownResponse
 }

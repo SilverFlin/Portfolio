@@ -6,7 +6,7 @@
         </div>
         <div class="p-3">
             <h1 class="relative text-xl font-bold uppercase truncate text-[#27241D]">
-                {{ props.card.name }}
+                {{ props.card.title }}
             </h1>
             <span class="font-mono right-0 text-base text-[#E8E6E1] lowercase">
                 {{ props.card.date.toLocaleString('default', { month: 'short', year: "numeric" }) }}
@@ -34,15 +34,15 @@
 </template>
 
 <script setup lang="ts">
-import type { ProjectCardProps, TechnologyLabel } from "@/types";
+import type { Project, TechnologyLabel } from "@/types";
 import { projectsImagesDirPath } from "@/constants/paths";
 import router from "@/router";
 import { getBackgroundImage } from "@/includes/importImages";
 
-const props = defineProps<{ card: ProjectCardProps }>()
+const props = defineProps<{ card: Project }>()
 
-const firstTwoTechnologies: TechnologyLabel[] = props.card.technologies.slice(0, 2);
-const restOfTechnologies: TechnologyLabel[] = props.card.technologies.slice(2);
+const firstTwoTechnologies: TechnologyLabel[] = props.card.tags.slice(0, 2);
+const restOfTechnologies: TechnologyLabel[] = props.card.tags.slice(2);
 
 
 function loadProject(): void {

@@ -1,7 +1,7 @@
 <template>
     <div class="h-screen min-h-screen">
         <div class="flex w-screen bg-fixed bg-center bg-cover h-2/3"
-            :style="getBackgroundImage(`${articlesImagesDirPath}/${article?.coverImageURL}`)">
+            :style="getBackgroundImage(`${articlesImagesDirPath}/${article?.imageName}`)">
             <div class="w-3/4 px-8 py-6 m-auto overflow-hidden bg-secondary-300 ">
                 <h1 class="text-3xl font-bold uppercase ">
                     {{ article!.title }}
@@ -10,56 +10,43 @@
                     {{ article!.date.toLocaleString('default', { day: '2-digit', month: 'short', year: "numeric" }) }}
                 </span>
             </div>
-
         </div>
-        <div class="px-4 my-8 lg:px-16">
-            <template v-for="(content, idx) in article!.content" :key="idx">
-                <template v-if="content.type === 'text'">
-                    <p class="mt-8 text-justify">
-                        {{ (content as ArticleTextContent).text }}
-                    </p>
-                </template>
-                <template v-else-if="content.type === 'image'">
-                    <img :src="(content as ArticleImageContent).url" alt="" class="w-1/3 mx-auto mt-8">
-                </template>
-                <template v-else-if="content.type === 'code'">
-                    <highlightjs autodetect :code="(content as ArticleCodeContent).code" class="mt-8" />
-                </template>
-                <template v-else-if="content.type === 'title'">
-                    <h2 class="mt-16 text-3xl font-bold">
-                        {{ (content as ArticleTitleContent).title }}
-                    </h2>
-                </template>
 
-            </template>
-
-
+        <div class="px-4 py-16 mb-8 lg:px-16 ">
+            <component :is="article.component" />
         </div>
-        <div class="my-8">
+
+        <div class="">
             <!-- TODO Tags and links -->
         </div>
-
-
-
     </div>
 </template>
 
 <script setup lang="ts">
-import type { ArticleTitleContent, ArticleViewProps } from '@/types';
 import { useRoute, useRouter } from 'vue-router';
-import { getArticleById } from '@/models/Articles';
 import { getBackgroundImage } from '@/includes/importImages';
-import type { ArticleTextContent, ArticleImageContent, ArticleCodeContent } from '@/types';
 import 'highlight.js/lib/common';
 import { articlesImagesDirPath } from '@/constants/paths';
+import type { Article } from '@/types';
+import { getArticleById } from '@/content';
+import { ref, shallowRef } from 'vue';
+import { setTailwindClassesOnMarkdown } from '@/includes/classLoader';
 
 const route = useRoute();
-const router = useRouter();
+const router = useRouter()
 
-const article: ArticleViewProps | undefined = getArticleById(+route.params.id);
-
-if (!article) {
-    router.push({ name: 'home' });
-}
+let article = ref();
+getArticleById(route.params.id as string)
+    .then((a: Article) => {
+        a.component = shallowRef(a.component)
+        article.value = a;
+    })
+    .then(() => {
+        setTailwindClassesOnMarkdown(document)
+    })
+    .catch((_e) => {
+        console.error("Article not found")
+        router.push({ name: 'home' })
+    })
 
 </script>
