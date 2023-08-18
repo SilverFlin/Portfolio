@@ -12,6 +12,7 @@ import 'highlight.js/styles/stackoverflow-light.css'
 import 'highlight.js/lib/common';
 import hljsVuePlugin from "@highlightjs/vue-plugin";
 import { createHead } from '@vueuse/head'
+import { InferSeoMetaPlugin } from '@unhead/addons'
 
 const app = createApp(App)
 
@@ -19,10 +20,13 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(hljsVuePlugin)
+
+
 app.use(createHead())
 app.use(VueGtag, {
     config: { id: import.meta.env.VITE_GA_MEASUREMENT_ID }
 })
+// app.use(createMetaManager())
 
 app.mount('#app')
 

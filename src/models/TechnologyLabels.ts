@@ -61,7 +61,10 @@ function getLabel(technology: string): TechnologyLabel {
         case "mongodb":
             return MongoDBTechnologyLabel;
         default:
-            throw new Error(`Technology ${technology} is not supported.`);
+            return {
+                name: technology,
+                color: "#D3CEC4"
+            };
     }
 }
 
