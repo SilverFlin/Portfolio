@@ -3,8 +3,10 @@
         <article-header v-if="project" :project="project"></article-header>
 
 
-        <article class="px-4 py-2 dark:bg-[#002e63] prose dark:prose-invert lg:prose-2xl bg-[white] m-auto">
+        <article class="mb-4 px-4 py-2 dark:bg-[#002e63] prose dark:prose-invert lg:prose-2xl bg-[white] m-auto">
             <component :is="project?.component" />
+            <hr>
+            <about-author class="not-prose"></about-author>
         </article>
 
         <div class="">
@@ -20,7 +22,8 @@ import 'highlight.js/lib/common';
 import { getProjectById } from '@/content';
 import { ref, shallowRef } from 'vue';
 import type { Project } from '@/types';
-import ArticleHeader from './ArticleHeader.vue';
+import ArticleHeader from '@/components/ArticleHeader.vue';
+import AboutAuthor from '@/components/AboutAuthor.vue';
 
 const route = useRoute();
 const router = useRouter();
