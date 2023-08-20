@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col justify-center max-h-screen min-h-screen overflow-hidden bg-secondary-100">
-        <h1 class="my-auto text-5xl font-bold text-center uppercase h-1/3 text-primary-700">
+    <div class="max-h-screen min-h-screen overflow-hidden bg-secondary-100">
+        <h1 class="my-16 text-5xl font-bold text-center uppercase lg:ml-12 ">
             Last Projects
         </h1>
         <div class="flex flex-row items-center justify-center h-2/3">

@@ -4,7 +4,7 @@ title: Three Building Blocks IT Students
 date: 2023-08-17
 description: Three key lessons that I learned during my first year of Software Engineering.
 rawTags: [life, software-engineering, productivity, sleep, time-management]
-imageName: portfolio-website.jpeg
+imageName: building-blocks.jpg
 ---
 
 I started my career knowing nothing about programming. I did have a passion for mathematics, and spending time around the computer was my day-to-day routine. Luckily, a friend of mine was working at the time in the IT industry. I approached him seeking direction, and it was one of the best decisions that I made.
