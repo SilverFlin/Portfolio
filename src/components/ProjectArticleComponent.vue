@@ -3,7 +3,7 @@
         <article-header v-if="project" :project="project"></article-header>
 
 
-        <article class="px-4 prose dark:prose-invert lg:prose-2xl bg-[white] m-auto">
+        <article class="px-4 py-2 dark:bg-[#002e63] prose dark:prose-invert lg:prose-2xl bg-[white] m-auto">
             <component :is="project?.component" />
         </article>
 
