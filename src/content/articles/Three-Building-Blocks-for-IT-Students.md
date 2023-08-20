@@ -23,7 +23,7 @@ I discovered that the strategy that I have used for the last 2 years is the same
 
 The approach that I take is to idealize my perfect week, I usually build this on a weekend, knowing how many weeks I have left for summer or in the semester.
 
-![[Pasted image 20230813211614.png]]
+![calendar img](https://raw.githubusercontent.com/SilverFlin/Images/main/portfolio/articles/building-blocks-calendar.png)
 
 This was my ideal week during summer classes, there is not that much after Innovation class, but you get the idea.
 
