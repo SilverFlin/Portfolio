@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center px-6 m-auto rounded-xl w-[80%] h-64">
+    <div class="flex items-center w-full px-6 m-auto rounded-xl ">
         <div :style="getBackgroundImage(`${baseImagesDirPath}/luistoledo.jpg`)"
             class="w-20 h-20 bg-center bg-cover rounded-full shrink-0">
         </div>
