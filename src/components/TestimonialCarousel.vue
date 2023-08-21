@@ -7,11 +7,11 @@
         <div class="flex justify-center w-1/3 h-auto mx-auto mt-3 bg-inherit">
             <div v-for="(card, idx) in testimonialCards" :key="idx" class="inline mx-2">
                 <template v-if="card.isActive">
-                    <Icon :width="30" class="text-[#504A40]" icon="line-md:circle-twotone" />
+                    <Icon :width="30" class="text-secondary-900 dark:text-secondary-100" icon="line-md:circle-twotone" />
                 </template>
                 <template v-else>
-                    <Icon @click="switchToCard($event, idx)" :width="30" class="text-[#504A40] cursor-pointer"
-                        icon="fluent:circle-12-regular" />
+                    <Icon @click="switchToCard($event, idx)" :width="30"
+                        class="cursor-pointer text-secondary-900 dark:text-secondary-100" icon="fluent:circle-12-regular" />
                 </template>
             </div>
         </div>

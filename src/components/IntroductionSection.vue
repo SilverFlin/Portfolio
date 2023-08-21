@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-center w-full h-screen max-h-screen min-h-screen overflow-hidden">
-        <div class="flex flex-col items-center w-1/2 justify-evenly">
+        <div class="flex flex-col items-center w-1/2 justify-evenly dark:text-secondary-100 ">
             <h1 class="font-sans text-center text-8xl lg:text-9xl">I'm Luis Toledo</h1>
             <p class="font-mono text-5xl text-center">A Software Engineer</p>
         </div>

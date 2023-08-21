@@ -2,13 +2,13 @@
     <nav class="fixed z-10 w-full top-3 bg-inherit">
 
         <Icon @click="returnPage" width="2rem" icon="line-md:arrow-left"
-            class="absolute rounded-full cursor-pointer dark:text-secondary-100 dark:hover:text-secondary-500 hover:text-secondary-300 top-15 left-10" />
+            class="absolute rounded-full cursor-pointer dark:text-secondary-100 dark:hover:text-secondary-200 hover:text-secondary-200 top-15 left-10" />
 
 
         <ul class="justify-around hidden lg:flex px-80">
             <li v-for="route in routes" :key="route.name" class="">
                 <router-link :to="{ name: route.name }"
-                    class="font-bold uppercase dark:text-secondary-100 dark:hover:text-primary-400 text-secondary-900 hover:text-primary-400"
+                    class="font-bold uppercase dark:text-secondary-100 dark:hover:text-primary-200 text-secondary-900 hover:text-primary-400"
                     active-class="text-primary-500">
                     {{ route.name }}
                 </router-link>
@@ -21,7 +21,7 @@
         </button>
 
         <Icon @click="toggleDarkMode" width="2rem" icon="line-md:light-dark"
-            class="absolute hidden rounded-full cursor-pointer lg:block -top-0 dark:text-secondary-100 dark:hover:text-secondary-500 hover:text-secondary-300 right-10" />
+            class="absolute hidden rounded-full cursor-pointer lg:block -top-0 dark:text-secondary-100 dark:hover:text-secondary-200 hover:text-secondary-300 right-10" />
 
 
         <transition name="dropdown">
