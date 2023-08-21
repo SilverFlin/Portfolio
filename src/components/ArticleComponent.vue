@@ -3,7 +3,7 @@
 
         <article-header v-if="article" :article="article"></article-header>
 
-        <article class="px-4 mb-4 py-2 prose dark:prose-invert dark:bg-[#002e63] lg:prose-2xl bg-[white] m-auto">
+        <article class="px-4 mb-4 py-2 prose dark:prose-invert dark:bg-cool-black lg:prose-2xl bg-[white] m-auto">
             <component :is="article?.component" />
             <hr>
             <about-author class="not-prose"></about-author>
