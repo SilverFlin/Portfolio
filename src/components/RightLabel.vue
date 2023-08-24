@@ -1,6 +1,6 @@
 <template>
     <div @click="clickLabel" :class="{ 'w-5/6': isRendered, 'w-3/6': !isRendered, 'hover:w-4/6': !isRendered }"
-        class="h-12 py-3 pl-3 rounded-l-lg cursor-pointer bg-secondary-200">
+        class="h-12 py-3 pl-3 font-bold rounded-l-lg cursor-pointer bg-primary-200 dark:bg-primary-800 text-secondary-800 dark:text-secondary-100">
         <div class="hidden lg:block">
             <slot name="text"></slot>
         </div>

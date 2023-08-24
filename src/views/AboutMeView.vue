@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row w-screen h-screen min-h-screen bg-red-300">
+    <div class="flex flex-row w-screen h-screen min-h-screen dark:text-secondary-200">
         <div class="flex flex-col justify-around w-1/6 h-full py-8 bg-green-300">
             <left-label :setCurrentViewIndex="setCurrentViewIndex" :indexComponent="innerViews.indexOf(WhoAmIComponent)"
                 :currentViewIndex="currentViewIndex">
@@ -41,7 +41,7 @@
             </div>
             <div class="">
                 <h2 @click="downloadResume"
-                    class="mb-8 text-xl font-bold text-center underline uppercase cursor-pointer hover:text-2xl text-primary-800">
+                    class="mb-8 text-xl font-bold text-center underline uppercase cursor-pointer hover:text-2xl text-primary-800 dark:text-secondary-200">
                     Download My Resume
                 </h2>
             </div>
