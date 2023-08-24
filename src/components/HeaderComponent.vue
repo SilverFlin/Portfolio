@@ -15,17 +15,17 @@
             </li>
         </ul>
 
-        <button @click="navMenuStore.toggle" class="absolute lg:hidden right-10 text-secondary-800"
-            :class="{ 'bg-secondary-100': navMenuStore.isOpen }">
+        <button @click="navMenuStore.toggle" class="absolute lg:hidden right-10 text-secondary-800 dark:text-secondary-100">
             <Icon width="32" height="32" icon="ci:hamburger-lg" />
         </button>
 
         <Icon @click="toggleDarkMode" width="2rem" icon="line-md:light-dark"
-            class="absolute hidden rounded-full cursor-pointer lg:block -top-0 dark:text-secondary-100 dark:hover:text-secondary-200 hover:text-secondary-300 right-10" />
+            class="absolute rounded-full cursor-pointer lg:block text-secondary-800 -top-0 dark:text-secondary-100 dark:hover:text-secondary-200 hover:text-secondary-300 right-20" />
 
 
         <transition name="dropdown">
-            <ul class="absolute w-full mt-10 bg-secondary-100 lg:hidden text-secondary-500" v-if="navMenuStore.isOpen">
+            <ul class="absolute w-full mt-10 bg-secondary-100 dark:bg-secondary-800 dark:text-secondary-200 lg:hidden text-secondary-500"
+                v-if="navMenuStore.isOpen">
                 <li v-for="route in routes" :key="route.name" class="px-4">
                     <router-link @click="closeDropDown" :to="{ name: route.name }"
                         class="block w-full h-full px-4 py-2 font-bold uppercase " active-class="text-primary-600">
