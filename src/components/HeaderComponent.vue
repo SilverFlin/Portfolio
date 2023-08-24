@@ -16,7 +16,7 @@
         </ul>
 
         <button @click="navMenuStore.toggle" class="absolute lg:hidden right-10 text-secondary-800"
-            :class="{ 'bg-secondary-300': navMenuStore.isOpen }">
+            :class="{ 'bg-secondary-100': navMenuStore.isOpen }">
             <Icon width="32" height="32" icon="ci:hamburger-lg" />
         </button>
 
@@ -25,11 +25,10 @@
 
 
         <transition name="dropdown">
-            <ul class="absolute w-full mt-10 bg-secondary-300 lg:hidden " v-if="navMenuStore.isOpen">
+            <ul class="absolute w-full mt-10 bg-secondary-100 lg:hidden text-secondary-500" v-if="navMenuStore.isOpen">
                 <li v-for="route in routes" :key="route.name" class="px-4">
-                    <router-link :to="{ name: route.name }"
-                        class="block w-full h-full px-4 py-2 font-bold uppercase text-secondary-500 hover:text-primary-400"
-                        active-class="text-primary-600">
+                    <router-link @click="closeDropDown" :to="{ name: route.name }"
+                        class="block w-full h-full px-4 py-2 font-bold uppercase " active-class="text-primary-600">
                         {{ route.name }}
                     </router-link>
                     <template v-if="routes.indexOf(route) !== routes.length - 1">
@@ -54,6 +53,10 @@ const selectedThemeStore = useSelectedThemeStore()
 
 const toggleDarkMode = () => {
     selectedThemeStore.toggleDarkMode()
+}
+
+function closeDropDown() {
+    navMenuStore.close()
 }
 
 const navBarRoutes = ['home', 'about me', 'projects', 'articles']
