@@ -7,7 +7,7 @@ rawTags: [life, software-engineering, productivity, sleep, time-management]
 imageName: building-blocks.jpg
 ---
 
-I started my career knowing nothing about programming. I did have a passion for mathematics, and spending time around the computer was my day-to-day routine. Luckily, a friend of mine was working at the time in the IT industry. I approached him seeking direction, and it was one of the best decisions that I made.
+I started my career knowing nothing about programming. I did have a passion for mathematics, and spending time around the computer was my day-to-day routine. Luckily, a friend of mine was working at the time in the IT industry. I approached him seeking direction, and it was one of the best decisions that I haver ever made.
 
 While the mentoring was helpful, it was surely not enough, but the direction sent me through a journey of discovery to create a solid base upon which I will be building throughout my career, which I will give to you now.
 
